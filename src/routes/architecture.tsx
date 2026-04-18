@@ -156,7 +156,7 @@ function ArchitecturePage() {
 
                 {/* Connector + label */}
                 <div className="relative flex h-16 items-center justify-center">
-                  <div className="h-full w-0.5 bg-gradient-to-b from-accent-cyan via-accent-cyan/70 to-accent-cyan shadow-[0_0_8px_var(--accent-cyan)]" />
+                  <div className="equity-line h-full w-0.5 bg-gradient-to-b from-accent-cyan via-accent-cyan/70 to-accent-cyan shadow-[0_0_8px_var(--accent-cyan)]" />
                   <span className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-md bg-background/70 px-2 py-0.5 text-[11px] font-medium text-accent-cyan backdrop-blur">
                     100% Wholly Owned · 10,000 Shares
                   </span>
@@ -176,7 +176,7 @@ function ArchitecturePage() {
 
                 {/* Connector + label */}
                 <div className="relative flex h-12 items-center justify-center">
-                  <div className="h-full w-0.5 bg-gradient-to-b from-accent-cyan to-accent-cyan/40" />
+                  <div className="equity-line equity-line-delay-1 h-full w-0.5 bg-gradient-to-b from-accent-cyan to-accent-cyan/40" />
                   <span className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-md bg-background/70 px-2 py-0.5 text-[11px] font-medium text-accent-cyan backdrop-blur">
                     Fractional / Majority Ownership
                   </span>
@@ -186,9 +186,9 @@ function ArchitecturePage() {
                 <div className="w-full max-w-4xl px-4">
                   <div className="mx-auto h-0.5 w-[88%] bg-accent-cyan/50" />
                   <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-                    {nationals.map((n) => (
+                    {nationals.map((n, i) => (
                       <div key={n.c} className="flex flex-col items-center">
-                        <div className="h-6 w-0.5 bg-accent-cyan/50" />
+                        <div className={`equity-line equity-line-delay-${i + 1} h-6 w-0.5 bg-accent-cyan/50`} />
                         <div className="w-full rounded-lg border border-accent-cyan/40 bg-gradient-to-br from-accent-blue/40 to-accent-blue/10 p-3 text-center shadow-[0_0_16px_oklch(0.65_0.18_230/0.2)]">
                           <div className="font-display text-sm font-semibold leading-tight">
                             {n.c}
