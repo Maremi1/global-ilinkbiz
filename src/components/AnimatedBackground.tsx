@@ -93,11 +93,14 @@ export default function AnimatedBackground() {
           <pointLight position={[-5, -5, -5]} intensity={1.0} color="#0EA5E9" />
           <pointLight position={[0, 5, 2]} intensity={0.8} color="#2563EB" />
 
-          <Shape position={[-3.5, 1.5, 0]} geometry="ico" color="#1D4ED8" speed={0.8} />
-          <Shape position={[3.5, -1, -1]} geometry="torus" color="#2563EB" speed={1.1} />
-          <Shape position={[0, 2.2, -2]} geometry="octa" color="#0EA5E9" speed={0.9} />
-          <Shape position={[-2.5, -2, -1.5]} geometry="torus" color="#3B82F6" speed={0.7} />
-          <Shape position={[3, 2, -3]} geometry="ico" color="#1E40AF" speed={1.0} />
+          <Shape position={[-3.5, 1.5, 0]} geometry="ico" color="#1D4ED8" speed={0.8} scale={1.1} orbit={0} />
+          <Shape position={[3.5, -1, -1]} geometry="torus" color="#2563EB" speed={1.1} scale={1} orbit={1.2} />
+          <Shape position={[0, 2.2, -2]} geometry="octa" color="#0EA5E9" speed={0.9} scale={1.2} orbit={2.4} />
+          <Shape position={[-2.5, -2, -1.5]} geometry="torus" color="#3B82F6" speed={0.7} scale={0.9} orbit={3.6} />
+          <Shape position={[3, 2, -3]} geometry="ico" color="#1E40AF" speed={1.0} scale={1.3} orbit={4.8} />
+          <Shape position={[-4, -0.5, -2.5]} geometry="octa" color="#0284C7" speed={1.2} scale={0.8} orbit={0.6} />
+          <Shape position={[4.2, 0.8, 0.5]} geometry="ico" color="#1E3A8A" speed={0.85} scale={0.85} orbit={2} />
+          <Shape position={[-1, -2.5, 0.5]} geometry="ico" color="#38BDF8" speed={1.05} scale={0.7} orbit={5.5} />
         </Suspense>
       </Canvas>
 
