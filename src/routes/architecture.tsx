@@ -172,6 +172,17 @@ function ArchitecturePage() {
                   </div>
                   <div className="relative mt-4">
                     <div className="absolute inset-0 -m-8 rounded-full bg-[radial-gradient(circle,oklch(0.65_0.18_230/0.45),transparent_70%)] blur-2xl" />
+                    {/* Orbiting rings */}
+                    <div className="pointer-events-none absolute inset-0 -m-10 grid place-items-center" aria-hidden>
+                      <div className="shield-orbit absolute h-[260px] w-[260px] rounded-full border border-dashed border-accent-cyan/40">
+                        <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-accent-cyan shadow-[0_0_12px_var(--accent-cyan)]" />
+                        <span className="absolute top-1/2 -right-1.5 h-2 w-2 -translate-y-1/2 rounded-full bg-accent-cyan/80 shadow-[0_0_10px_var(--accent-cyan)]" />
+                      </div>
+                      <div className="shield-orbit-slow absolute h-[320px] w-[320px] rounded-full border border-accent-cyan/20">
+                        <span className="absolute top-1/2 -left-1 h-2 w-2 -translate-y-1/2 rounded-full bg-accent-cyan/70 shadow-[0_0_10px_var(--accent-cyan)]" />
+                        <span className="absolute -bottom-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent-cyan shadow-[0_0_12px_var(--accent-cyan)]" />
+                      </div>
+                    </div>
                     <div className="relative grid h-44 w-44 place-items-center rounded-3xl border-2 border-accent-cyan/60 bg-gradient-to-br from-accent-blue/40 to-accent-cyan/20 shadow-[0_0_60px_oklch(0.65_0.18_230/0.5)]">
                       <Shield
                         size={64}
