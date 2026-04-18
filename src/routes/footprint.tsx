@@ -3,6 +3,10 @@ import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+
+const AFRICA_TOPO =
+  "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/africa.json";
 
 export const Route = createFileRoute("/footprint")({
   head: () => ({
