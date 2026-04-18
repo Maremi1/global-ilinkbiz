@@ -6,7 +6,12 @@ import { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
 
 const AFRICA_TOPO =
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/africa.json";
+  "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+
+// ISO 3166-1 numeric IDs for African countries (used to filter world map)
+const AFRICAN_ISO_IDS = new Set([
+  "012","024","072","086","108","120","132","140","148","174","178","180","204","226","231","232","262","266","270","288","324","384","404","426","430","434","450","454","466","478","480","504","508","516","562","566","624","646","678","686","690","694","706","710","716","728","729","732","748","768","788","800","818","834","854","894",
+]);
 
 export const Route = createFileRoute("/footprint")({
   head: () => ({
@@ -93,14 +98,16 @@ function FootprintPage() {
                   </defs>
                   <Geographies geography={AFRICA_TOPO}>
                     {({ geographies }) =>
-                      geographies.map((geo) => {
-                        const name: string =
-                          geo.properties.name || geo.properties.NAME || "";
-                        const node = nodes.find(
-                          (n) => n.name.toLowerCase() === name.toLowerCase(),
-                        );
-                        const isActive = node && active === node.id;
-                        return (
+                      geographies
+                        .filter((geo) => AFRICAN_ISO_IDS.has(String(geo.id)))
+                        .map((geo) => {
+                          const name: string =
+                            geo.properties.name || geo.properties.NAME || "";
+                          const node = nodes.find(
+                            (n) => n.name.toLowerCase() === name.toLowerCase(),
+                          );
+                          const isActive = node && active === node.id;
+                          return (
                           <Geography
                             key={geo.rsmKey}
                             geography={geo}
@@ -109,20 +116,20 @@ function FootprintPage() {
                               default: {
                                 fill: node
                                   ? isActive
-                                    ? "oklch(0.78 0.16 220 / 0.55)"
-                                    : "oklch(0.70 0.14 220 / 0.30)"
-                                  : "oklch(0.55 0.04 220 / 0.18)",
-                                stroke: "oklch(0.82 0.13 220 / 0.55)",
-                                strokeWidth: 0.6,
+                                    ? "oklch(0.62 0.18 230 / 0.9)"
+                                    : "oklch(0.70 0.16 225 / 0.6)"
+                                  : "oklch(0.78 0.06 225 / 0.45)",
+                                stroke: "oklch(0.45 0.14 230)",
+                                strokeWidth: 0.5,
                                 outline: "none",
                                 cursor: node ? "pointer" : "default",
                                 transition: "fill 0.3s",
                               },
                               hover: {
                                 fill: node
-                                  ? "oklch(0.80 0.16 220 / 0.6)"
-                                  : "oklch(0.55 0.04 220 / 0.22)",
-                                stroke: "oklch(0.85 0.13 220 / 0.7)",
+                                  ? "oklch(0.65 0.18 230 / 0.9)"
+                                  : "oklch(0.78 0.06 225 / 0.55)",
+                                stroke: "oklch(0.40 0.16 230)",
                                 strokeWidth: 0.7,
                                 outline: "none",
                               },
