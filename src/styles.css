@@ -275,4 +275,10 @@
   .equity-line-delay-2::before { animation-delay: 0.6s; }
   .equity-line-delay-3::before { animation-delay: 0.9s; }
   .equity-line-delay-4::before { animation-delay: 1.2s; }
+
+  /* IP Shield orbiting rings */
+  @keyframes shield-spin { to { transform: rotate(360deg); } }
+  @keyframes shield-spin-reverse { to { transform: rotate(-360deg); } }
+  .shield-orbit { animation: shield-spin 18s linear infinite; transform-origin: center; }
+  .shield-orbit-slow { animation: shield-spin-reverse 28s linear infinite; transform-origin: center; }
 }
