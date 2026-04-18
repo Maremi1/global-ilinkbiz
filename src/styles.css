@@ -236,3 +236,13 @@
   }
   .reveal { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 }
+
+@layer utilities {
+  @keyframes footprint-dash {
+    to { stroke-dashoffset: -16; }
+  }
+  .footprint-flow {
+    animation: footprint-dash 1.2s linear infinite;
+    filter: drop-shadow(0 0 4px oklch(0.82 0.16 220 / 0.7));
+  }
+}
