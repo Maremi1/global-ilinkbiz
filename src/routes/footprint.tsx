@@ -27,24 +27,33 @@ export const Route = createFileRoute("/footprint")({
   component: FootprintPage,
 });
 
-const nodes = [
+type Node = {
+  id: string;
+  name: string;
+  role: string;
+  detail: string;
+  coords: [number, number];
+  hq?: boolean;
+};
+
+const nodes: Node[] = [
   {
     id: "rw",
     name: "Rwanda",
     role: "Headquarters",
     detail: "Vision Arcade Executive Suites, Kigali",
-    x: 62,
-    y: 58,
+    coords: [30.0619, -1.9441],
     hq: true,
   },
-  { id: "gh", name: "Ghana", role: "Operating Co.", detail: "West Africa hub", x: 28, y: 50 },
-  { id: "et", name: "Ethiopia", role: "Operating Co.", detail: "Horn of Africa hub", x: 70, y: 42 },
-  { id: "tz", name: "Tanzania", role: "Operating Co.", detail: "East Africa hub", x: 64, y: 65 },
+  { id: "gh", name: "Ghana", role: "Operating Co.", detail: "West Africa hub", coords: [-0.1869, 5.6037] },
+  { id: "et", name: "Ethiopia", role: "Operating Co.", detail: "Horn of Africa hub", coords: [38.7578, 9.032] },
+  { id: "tz", name: "Tanzania", role: "Operating Co.", detail: "East Africa hub", coords: [35.7395, -6.163] },
 ];
 
 function FootprintPage() {
   const [active, setActive] = useState<string>("rw");
   const current = nodes.find((n) => n.id === active)!;
+  const hq = nodes.find((n) => n.hq)!;
 
   return (
     <PageShell>
