@@ -27,12 +27,14 @@ function Shape({
   const material = (
     <MeshDistortMaterial
       color={color}
-      roughness={0.15}
-      metalness={0.65}
-      distort={0.35}
-      speed={1.6}
+      roughness={0.1}
+      metalness={0.85}
+      distort={0.4}
+      speed={1.8}
       transparent
-      opacity={0.45}
+      opacity={0.9}
+      emissive={color}
+      emissiveIntensity={0.4}
     />
   );
 
@@ -75,15 +77,16 @@ export default function AnimatedBackground() {
         gl={{ antialias: true, alpha: true }}
       >
         <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 5, 5]} intensity={0.8} color="#7DD3FC" />
-          <pointLight position={[-5, -5, -5]} intensity={0.6} color="#60A5FA" />
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[5, 5, 5]} intensity={1.3} color="#3B82F6" />
+          <pointLight position={[-5, -5, -5]} intensity={1.0} color="#0EA5E9" />
+          <pointLight position={[0, 5, 2]} intensity={0.8} color="#2563EB" />
 
-          <Shape position={[-3.5, 1.5, 0]} geometry="ico" color="#7DD3FC" speed={0.8} />
-          <Shape position={[3.5, -1, -1]} geometry="torus" color="#60A5FA" speed={1.1} />
-          <Shape position={[0, 2.2, -2]} geometry="octa" color="#38BDF8" speed={0.9} />
-          <Shape position={[-2.5, -2, -1.5]} geometry="torus" color="#7DD3FC" speed={0.7} />
-          <Shape position={[3, 2, -3]} geometry="ico" color="#93C5FD" speed={1.0} />
+          <Shape position={[-3.5, 1.5, 0]} geometry="ico" color="#1D4ED8" speed={0.8} />
+          <Shape position={[3.5, -1, -1]} geometry="torus" color="#2563EB" speed={1.1} />
+          <Shape position={[0, 2.2, -2]} geometry="octa" color="#0EA5E9" speed={0.9} />
+          <Shape position={[-2.5, -2, -1.5]} geometry="torus" color="#3B82F6" speed={0.7} />
+          <Shape position={[3, 2, -3]} geometry="ico" color="#1E40AF" speed={1.0} />
         </Suspense>
       </Canvas>
 
