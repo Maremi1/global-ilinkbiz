@@ -186,9 +186,9 @@ function ArchitecturePage() {
                 <div className="w-full max-w-4xl px-4">
                   <div className="mx-auto h-0.5 w-[88%] bg-accent-cyan/50" />
                   <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-                    {nationals.map((n) => (
+                    {nationals.map((n, i) => (
                       <div key={n.c} className="flex flex-col items-center">
-                        <div className="h-6 w-0.5 bg-accent-cyan/50" />
+                        <div className={`equity-line equity-line-delay-${i + 1} h-6 w-0.5 bg-accent-cyan/50`} />
                         <div className="w-full rounded-lg border border-accent-cyan/40 bg-gradient-to-br from-accent-blue/40 to-accent-blue/10 p-3 text-center shadow-[0_0_16px_oklch(0.65_0.18_230/0.2)]">
                           <div className="font-display text-sm font-semibold leading-tight">
                             {n.c}
