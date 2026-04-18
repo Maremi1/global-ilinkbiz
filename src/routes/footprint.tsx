@@ -98,14 +98,16 @@ function FootprintPage() {
                   </defs>
                   <Geographies geography={AFRICA_TOPO}>
                     {({ geographies }) =>
-                      geographies.map((geo) => {
-                        const name: string =
-                          geo.properties.name || geo.properties.NAME || "";
-                        const node = nodes.find(
-                          (n) => n.name.toLowerCase() === name.toLowerCase(),
-                        );
-                        const isActive = node && active === node.id;
-                        return (
+                      geographies
+                        .filter((geo) => AFRICAN_ISO_IDS.has(String(geo.id)))
+                        .map((geo) => {
+                          const name: string =
+                            geo.properties.name || geo.properties.NAME || "";
+                          const node = nodes.find(
+                            (n) => n.name.toLowerCase() === name.toLowerCase(),
+                          );
+                          const isActive = node && active === node.id;
+                          return (
                           <Geography
                             key={geo.rsmKey}
                             geography={geo}
