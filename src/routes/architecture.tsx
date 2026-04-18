@@ -64,16 +64,11 @@ const tiers = [
   },
 ];
 
-const equity = [
-  { name: "iLink Global Holdings", sub: "Tier 1 — IP Custodian" },
-  { name: "iLink International Management", sub: "Tier 2 — Strategic Holding" },
-];
-
 const nationals = [
-  { c: "Rwanda", role: "HQ & Operating Co." },
-  { c: "Ghana", role: "Operating Co." },
-  { c: "Ethiopia", role: "Operating Co." },
-  { c: "Tanzania", role: "Operating Co." },
+  { c: "iLink Rwanda Limited", role: "HQ & Operating Co." },
+  { c: "iLink Ghana", role: "Operating Co." },
+  { c: "iLink Ethiopia", role: "Operating Co." },
+  { c: "iLink Tanzania", role: "Operating Co." },
 ];
 
 function ArchitecturePage() {
@@ -121,44 +116,112 @@ function ArchitecturePage() {
             ))}
           </div>
 
-          {/* EQUITY TREE */}
+          {/* EQUITY TREE — 100% chain of custody */}
           <div className="mt-20">
             <div className="reveal max-w-2xl">
               <span className="text-xs uppercase tracking-[0.25em] text-accent-cyan">
                 Equity Tree
               </span>
               <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">
-                Ownership flows from the apex.
+                <span className="text-gradient">100% Chain of Custody.</span>
               </h2>
+              <p className="mt-3 text-muted-foreground">
+                Ownership flows transparently from the apex down through every
+                national operating entity.
+              </p>
             </div>
 
-            <div className="mt-10 flex flex-col items-center gap-6">
-              {equity.map((n) => (
-                <div key={n.name} className="w-full max-w-md">
-                  <GlassCard strong className="text-center">
-                    <div className="text-xs uppercase tracking-[0.2em] text-accent-cyan">
-                      {n.sub}
+            <GlassCard
+              strong
+              hover={false}
+              className="mt-8 overflow-hidden"
+              style={{
+                backgroundImage:
+                  "linear-gradient(oklch(0.85 0.02 220 / 0.06) 1px, transparent 1px), linear-gradient(90deg, oklch(0.85 0.02 220 / 0.06) 1px, transparent 1px)",
+                backgroundSize: "24px 24px",
+              }}
+            >
+              <div className="flex flex-col items-center py-6 sm:py-10">
+                {/* Tier 1 — Apex */}
+                <div className="w-full max-w-sm">
+                  <div className="rounded-xl border-2 border-accent-cyan/60 bg-gradient-to-br from-accent-blue/40 to-accent-cyan/20 p-5 text-center shadow-[0_0_30px_oklch(0.65_0.18_230/0.35)]">
+                    <div className="font-display text-xl font-bold tracking-tight">
+                      iLink <span className="text-accent-cyan">Global</span>
                     </div>
-                    <div className="mt-1 font-display text-lg font-semibold">{n.name}</div>
-                  </GlassCard>
-                  <div
-                    className="mx-auto h-8 w-px bg-gradient-to-b from-accent-cyan to-transparent"
-                    aria-hidden
-                  />
+                    <div className="mt-2 border-t border-accent-cyan/30 pt-2 text-xs uppercase tracking-wider">
+                      Ultimate IP & Holding Authority
+                    </div>
+                  </div>
                 </div>
-              ))}
 
-              <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-4">
-                {nationals.map((n) => (
-                  <GlassCard key={n.c} className="text-center">
-                    <div className="font-display text-base font-semibold">{n.c}</div>
-                    <div className="mt-1 text-[10px] uppercase tracking-wider text-muted-foreground">
-                      {n.role}
+                {/* Connector + label */}
+                <div className="relative flex h-16 items-center justify-center">
+                  <div className="h-full w-0.5 bg-gradient-to-b from-accent-cyan via-accent-cyan/70 to-accent-cyan shadow-[0_0_8px_var(--accent-cyan)]" />
+                  <span className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-md bg-background/70 px-2 py-0.5 text-[11px] font-medium text-accent-cyan backdrop-blur">
+                    100% Wholly Owned · 10,000 Shares
+                  </span>
+                </div>
+
+                {/* Tier 2 */}
+                <div className="w-full max-w-sm">
+                  <div className="rounded-xl border-2 border-accent-cyan/40 bg-gradient-to-br from-accent-blue/30 to-accent-cyan/10 p-5 text-center shadow-[0_0_24px_oklch(0.65_0.18_230/0.25)]">
+                    <div className="font-display text-xl font-bold tracking-tight">
+                      iLink <span className="text-accent-cyan">International</span>
                     </div>
-                  </GlassCard>
-                ))}
+                    <div className="mt-2 border-t border-accent-cyan/30 pt-2 text-xs uppercase tracking-wider">
+                      Investment & Management Arm
+                    </div>
+                  </div>
+                </div>
+
+                {/* Connector + label */}
+                <div className="relative flex h-12 items-center justify-center">
+                  <div className="h-full w-0.5 bg-gradient-to-b from-accent-cyan to-accent-cyan/40" />
+                  <span className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-md bg-background/70 px-2 py-0.5 text-[11px] font-medium text-accent-cyan backdrop-blur">
+                    Fractional / Majority Ownership
+                  </span>
+                </div>
+
+                {/* Horizontal bus + drop lines */}
+                <div className="w-full max-w-4xl px-4">
+                  <div className="mx-auto h-0.5 w-[88%] bg-accent-cyan/50" />
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+                    {nationals.map((n) => (
+                      <div key={n.c} className="flex flex-col items-center">
+                        <div className="h-6 w-0.5 bg-accent-cyan/50" />
+                        <div className="w-full rounded-lg border border-accent-cyan/40 bg-gradient-to-br from-accent-blue/40 to-accent-blue/10 p-3 text-center shadow-[0_0_16px_oklch(0.65_0.18_230/0.2)]">
+                          <div className="font-display text-sm font-semibold leading-tight">
+                            {n.c}
+                          </div>
+                          <div className="mt-1 text-[10px] uppercase tracking-wider text-muted-foreground">
+                            {n.role}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Example structure callout */}
+                <div className="mt-10 w-full max-w-xl px-4">
+                  <div className="rounded-xl border border-accent-cyan/40 bg-accent-cyan/5 p-4 text-sm">
+                    <div className="font-semibold text-foreground">
+                      Example Structure: iLink Rwanda (10,000 Total Shares)
+                    </div>
+                    <ul className="mt-2 space-y-1 text-muted-foreground">
+                      <li className="flex gap-2">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-cyan" />
+                        5,000 shares held directly by iLink International
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-cyan" />
+                        Remaining held by local strategic partners
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
+            </GlassCard>
           </div>
 
           {/* COMPARISON TABLE */}
