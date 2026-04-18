@@ -134,6 +134,21 @@ function FootprintPage() {
                     }
                   </Geographies>
 
+                  {nodes
+                    .filter((n) => !n.hq)
+                    .map((n) => (
+                      <Line
+                        key={`line-${n.id}`}
+                        from={hq.coords}
+                        to={n.coords}
+                        stroke="oklch(0.85 0.16 220 / 0.85)"
+                        strokeWidth={1.5}
+                        strokeLinecap="round"
+                        strokeDasharray="4 4"
+                        className="footprint-flow"
+                      />
+                    ))}
+
                   {nodes.map((n) => (
                     <Marker
                       key={n.id}
