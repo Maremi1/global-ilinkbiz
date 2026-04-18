@@ -6,7 +6,12 @@ import { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
 
 const AFRICA_TOPO =
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/africa.json";
+  "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+
+// ISO 3166-1 numeric IDs for African countries (used to filter world map)
+const AFRICAN_ISO_IDS = new Set([
+  "012","024","072","086","108","120","132","140","148","174","178","180","204","226","231","232","262","266","270","288","324","384","404","426","430","434","450","454","466","478","480","504","508","516","562","566","624","646","678","686","690","694","706","710","716","728","729","732","748","768","788","800","818","834","854","894",
+]);
 
 export const Route = createFileRoute("/footprint")({
   head: () => ({
