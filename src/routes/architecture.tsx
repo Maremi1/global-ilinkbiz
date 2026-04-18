@@ -64,16 +64,11 @@ const tiers = [
   },
 ];
 
-const equity = [
-  { name: "iLink Global Holdings", sub: "Tier 1 — IP Custodian" },
-  { name: "iLink International Management", sub: "Tier 2 — Strategic Holding" },
-];
-
 const nationals = [
-  { c: "Rwanda", role: "HQ & Operating Co." },
-  { c: "Ghana", role: "Operating Co." },
-  { c: "Ethiopia", role: "Operating Co." },
-  { c: "Tanzania", role: "Operating Co." },
+  { c: "iLink Rwanda Limited", role: "HQ & Operating Co." },
+  { c: "iLink Ghana", role: "Operating Co." },
+  { c: "iLink Ethiopia", role: "Operating Co." },
+  { c: "iLink Tanzania", role: "Operating Co." },
 ];
 
 function ArchitecturePage() {
