@@ -8,20 +8,31 @@ function Shape({
   geometry,
   color,
   speed = 1,
+  scale = 1,
+  orbit = 0,
 }: {
   position: [number, number, number];
   geometry: "ico" | "torus" | "octa";
   color: string;
   speed?: number;
+  scale?: number;
+  orbit?: number;
 }) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame((state) => {
     if (!ref.current) return;
-    ref.current.rotation.x += 0.0025 * speed;
-    ref.current.rotation.y += 0.003 * speed;
+    const t = state.clock.elapsedTime;
+    ref.current.rotation.x += 0.006 * speed;
+    ref.current.rotation.y += 0.008 * speed;
+    ref.current.rotation.z += 0.003 * speed;
     const m = state.mouse;
-    ref.current.position.x = position[0] + m.x * 0.4;
-    ref.current.position.y = position[1] + m.y * 0.4;
+    // Slow orbit + cursor parallax
+    ref.current.position.x =
+      position[0] + Math.cos(t * 0.25 * speed + orbit) * 0.6 + m.x * 0.6;
+    ref.current.position.y =
+      position[1] + Math.sin(t * 0.3 * speed + orbit) * 0.5 + m.y * 0.6;
+    ref.current.position.z =
+      position[2] + Math.sin(t * 0.2 * speed + orbit) * 0.4;
   });
 
   const material = (
@@ -29,29 +40,29 @@ function Shape({
       color={color}
       roughness={0.1}
       metalness={0.85}
-      distort={0.4}
-      speed={1.8}
+      distort={0.45}
+      speed={2.4}
       transparent
       opacity={0.9}
       emissive={color}
-      emissiveIntensity={0.4}
+      emissiveIntensity={0.45}
     />
   );
 
   return (
-    <Float speed={1.4} rotationIntensity={0.4} floatIntensity={1.4}>
+    <Float speed={2} rotationIntensity={0.8} floatIntensity={2}>
       {geometry === "ico" && (
-        <Icosahedron ref={ref} args={[1, 1]} position={position}>
+        <Icosahedron ref={ref} args={[scale, 1]} position={position}>
           {material}
         </Icosahedron>
       )}
       {geometry === "torus" && (
-        <TorusKnot ref={ref} args={[0.7, 0.22, 128, 16]} position={position}>
+        <TorusKnot ref={ref} args={[0.7 * scale, 0.22 * scale, 128, 16]} position={position}>
           {material}
         </TorusKnot>
       )}
       {geometry === "octa" && (
-        <Octahedron ref={ref} args={[1.1, 0]} position={position}>
+        <Octahedron ref={ref} args={[1.1 * scale, 0]} position={position}>
           {material}
         </Octahedron>
       )}
@@ -82,11 +93,14 @@ export default function AnimatedBackground() {
           <pointLight position={[-5, -5, -5]} intensity={1.0} color="#0EA5E9" />
           <pointLight position={[0, 5, 2]} intensity={0.8} color="#2563EB" />
 
-          <Shape position={[-3.5, 1.5, 0]} geometry="ico" color="#1D4ED8" speed={0.8} />
-          <Shape position={[3.5, -1, -1]} geometry="torus" color="#2563EB" speed={1.1} />
-          <Shape position={[0, 2.2, -2]} geometry="octa" color="#0EA5E9" speed={0.9} />
-          <Shape position={[-2.5, -2, -1.5]} geometry="torus" color="#3B82F6" speed={0.7} />
-          <Shape position={[3, 2, -3]} geometry="ico" color="#1E40AF" speed={1.0} />
+          <Shape position={[-3.5, 1.5, 0]} geometry="ico" color="#1D4ED8" speed={0.8} scale={1.1} orbit={0} />
+          <Shape position={[3.5, -1, -1]} geometry="torus" color="#2563EB" speed={1.1} scale={1} orbit={1.2} />
+          <Shape position={[0, 2.2, -2]} geometry="octa" color="#0EA5E9" speed={0.9} scale={1.2} orbit={2.4} />
+          <Shape position={[-2.5, -2, -1.5]} geometry="torus" color="#3B82F6" speed={0.7} scale={0.9} orbit={3.6} />
+          <Shape position={[3, 2, -3]} geometry="ico" color="#1E40AF" speed={1.0} scale={1.3} orbit={4.8} />
+          <Shape position={[-4, -0.5, -2.5]} geometry="octa" color="#0284C7" speed={1.2} scale={0.8} orbit={0.6} />
+          <Shape position={[4.2, 0.8, 0.5]} geometry="ico" color="#1E3A8A" speed={0.85} scale={0.85} orbit={2} />
+          <Shape position={[-1, -2.5, 0.5]} geometry="ico" color="#38BDF8" speed={1.05} scale={0.7} orbit={5.5} />
         </Suspense>
       </Canvas>
 
