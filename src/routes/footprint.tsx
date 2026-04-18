@@ -109,20 +109,20 @@ function FootprintPage() {
                               default: {
                                 fill: node
                                   ? isActive
-                                    ? "oklch(0.78 0.16 220 / 0.55)"
-                                    : "oklch(0.70 0.14 220 / 0.30)"
-                                  : "oklch(0.55 0.04 220 / 0.18)",
-                                stroke: "oklch(0.82 0.13 220 / 0.55)",
-                                strokeWidth: 0.6,
+                                    ? "oklch(0.62 0.18 230 / 0.9)"
+                                    : "oklch(0.70 0.16 225 / 0.6)"
+                                  : "oklch(0.78 0.06 225 / 0.45)",
+                                stroke: "oklch(0.45 0.14 230)",
+                                strokeWidth: 0.5,
                                 outline: "none",
                                 cursor: node ? "pointer" : "default",
                                 transition: "fill 0.3s",
                               },
                               hover: {
                                 fill: node
-                                  ? "oklch(0.80 0.16 220 / 0.6)"
-                                  : "oklch(0.55 0.04 220 / 0.22)",
-                                stroke: "oklch(0.85 0.13 220 / 0.7)",
+                                  ? "oklch(0.65 0.18 230 / 0.9)"
+                                  : "oklch(0.78 0.06 225 / 0.55)",
+                                stroke: "oklch(0.40 0.16 230)",
                                 strokeWidth: 0.7,
                                 outline: "none",
                               },
