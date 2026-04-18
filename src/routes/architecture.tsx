@@ -156,7 +156,7 @@ function ArchitecturePage() {
 
                 {/* Connector + label */}
                 <div className="relative flex h-16 items-center justify-center">
-                  <div className="h-full w-0.5 bg-gradient-to-b from-accent-cyan via-accent-cyan/70 to-accent-cyan shadow-[0_0_8px_var(--accent-cyan)]" />
+                  <div className="equity-line h-full w-0.5 bg-gradient-to-b from-accent-cyan via-accent-cyan/70 to-accent-cyan shadow-[0_0_8px_var(--accent-cyan)]" />
                   <span className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-3 whitespace-nowrap rounded-md bg-background/70 px-2 py-0.5 text-[11px] font-medium text-accent-cyan backdrop-blur">
                     100% Wholly Owned · 10,000 Shares
                   </span>
