@@ -139,29 +139,29 @@
   .glass {
     background: linear-gradient(
       135deg,
-      oklch(1 0 0 / 0.65),
-      oklch(0.95 0.02 230 / 0.45)
+      oklch(1 0 0 / 0.30),
+      oklch(0.95 0.02 230 / 0.18)
     );
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    border: 1px solid oklch(1 0 0 / 0.45);
     box-shadow:
-      0 8px 32px 0 oklch(0.55 0.10 230 / 0.18),
-      inset 0 1px 0 0 oklch(1 0 0 / 0.60);
+      0 8px 32px 0 oklch(0.55 0.10 230 / 0.15),
+      inset 0 1px 0 0 oklch(1 0 0 / 0.55);
   }
 
   .glass-strong {
     background: linear-gradient(
       135deg,
-      oklch(1 0 0 / 0.78),
-      oklch(0.95 0.02 230 / 0.55)
+      oklch(1 0 0 / 0.45),
+      oklch(0.95 0.02 230 / 0.28)
     );
-    backdrop-filter: blur(24px) saturate(160%);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid oklch(0.62 0.13 230 / 0.28);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1px solid oklch(1 0 0 / 0.55);
     box-shadow:
-      0 12px 40px 0 oklch(0.55 0.10 230 / 0.22),
-      inset 0 1px 0 0 oklch(1 0 0 / 0.70);
+      0 12px 40px 0 oklch(0.55 0.10 230 / 0.20),
+      inset 0 1px 0 0 oklch(1 0 0 / 0.65);
   }
 
   .glow-hover {

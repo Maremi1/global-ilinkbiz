@@ -90,12 +90,12 @@ export default function AnimatedBackground() {
         </Suspense>
       </Canvas>
 
-      {/* Soft light vignette overlay */}
+      {/* Very subtle vignette so shapes remain visible */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 50%, oklch(0.985 0.008 230 / 0.55) 100%)",
+            "radial-gradient(ellipse at center, transparent 70%, oklch(0.985 0.008 230 / 0.25) 100%)",
         }}
       />
     </div>
