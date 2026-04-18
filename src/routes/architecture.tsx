@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { Building2, Globe, Network } from "lucide-react";
+import { Building2, Globe, Network, Shield, Copyright, Cpu, BookOpen, BadgeCheck } from "lucide-react";
 
 export const Route = createFileRoute("/architecture")({
   head: () => ({
