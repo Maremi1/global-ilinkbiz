@@ -77,65 +77,100 @@ function FootprintPage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
             {/* MAP */}
             <GlassCard strong className="relative aspect-[4/5] sm:aspect-[5/4]" hover={false}>
-              <div className="absolute inset-4 rounded-xl bg-[radial-gradient(circle_at_60%_55%,oklch(0.30_0.06_220/0.45),transparent_60%)]">
-                {/* Stylized continent silhouette */}
-                <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full opacity-25">
-                  <path
-                    d="M50 8 C 30 12 22 26 22 38 C 22 48 30 52 28 62 C 26 72 34 82 44 88 C 54 94 60 92 64 84 C 68 76 76 70 74 60 C 72 50 80 44 78 32 C 76 20 64 6 50 8 Z"
-                    fill="none"
-                    stroke="url(#g)"
-                    strokeWidth="0.6"
-                  />
+              <div className="absolute inset-2 overflow-hidden rounded-xl bg-[radial-gradient(circle_at_60%_55%,oklch(0.30_0.06_220/0.35),transparent_65%)]">
+                <ComposableMap
+                  projection="geoMercator"
+                  projectionConfig={{ scale: 360, center: [20, 0] }}
+                  width={800}
+                  height={800}
+                  style={{ width: "100%", height: "100%" }}
+                >
                   <defs>
-                    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0%" stopColor="#7DD3FC" />
-                      <stop offset="100%" stopColor="#60A5FA" />
-                    </linearGradient>
+                    <radialGradient id="hqGrad">
+                      <stop offset="0%" stopColor="oklch(0.95 0.10 220)" />
+                      <stop offset="100%" stopColor="oklch(0.65 0.18 230)" />
+                    </radialGradient>
                   </defs>
-                </svg>
+                  <Geographies geography={AFRICA_TOPO}>
+                    {({ geographies }) =>
+                      geographies.map((geo) => {
+                        const name: string =
+                          geo.properties.name || geo.properties.NAME || "";
+                        const node = nodes.find(
+                          (n) => n.name.toLowerCase() === name.toLowerCase(),
+                        );
+                        const isActive = node && active === node.id;
+                        return (
+                          <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            onClick={() => node && setActive(node.id)}
+                            style={{
+                              default: {
+                                fill: node
+                                  ? isActive
+                                    ? "oklch(0.78 0.16 220 / 0.55)"
+                                    : "oklch(0.70 0.14 220 / 0.30)"
+                                  : "oklch(0.55 0.04 220 / 0.18)",
+                                stroke: "oklch(0.82 0.13 220 / 0.55)",
+                                strokeWidth: 0.6,
+                                outline: "none",
+                                cursor: node ? "pointer" : "default",
+                                transition: "fill 0.3s",
+                              },
+                              hover: {
+                                fill: node
+                                  ? "oklch(0.80 0.16 220 / 0.6)"
+                                  : "oklch(0.55 0.04 220 / 0.22)",
+                                stroke: "oklch(0.85 0.13 220 / 0.7)",
+                                strokeWidth: 0.7,
+                                outline: "none",
+                              },
+                              pressed: { outline: "none" },
+                            }}
+                          />
+                        );
+                      })
+                    }
+                  </Geographies>
 
-                {/* Connection lines */}
-                <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
-                  {nodes
-                    .filter((n) => !n.hq)
-                    .map((n) => (
-                      <line
-                        key={n.id}
-                        x1={62}
-                        y1={58}
-                        x2={n.x}
-                        y2={n.y}
-                        stroke="oklch(0.82 0.13 220 / 0.5)"
-                        strokeWidth="0.3"
-                        strokeDasharray="0.8 0.8"
-                      />
-                    ))}
-                </svg>
-
-                {/* Nodes */}
-                {nodes.map((n) => (
-                  <button
-                    key={n.id}
-                    onClick={() => setActive(n.id)}
-                    aria-label={n.name}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform hover:scale-110"
-                    style={{ left: `${n.x}%`, top: `${n.y}%` }}
-                  >
-                    <span className="absolute inset-0 -m-2 animate-ping rounded-full bg-accent-cyan/40" />
-                    <span
-                      className={`relative grid h-5 w-5 place-items-center rounded-full ${
-                        n.hq
-                          ? "bg-gradient-to-br from-accent-cyan to-accent-blue shadow-[0_0_22px_var(--accent-cyan)]"
-                          : "bg-accent-cyan shadow-[0_0_14px_var(--accent-cyan)]"
-                      } ${active === n.id ? "ring-2 ring-foreground" : ""}`}
+                  {nodes.map((n) => (
+                    <Marker
+                      key={n.id}
+                      coordinates={n.coords}
+                      onClick={() => setActive(n.id)}
+                      style={{ default: { cursor: "pointer" } }}
                     >
-                      {n.hq && <span className="text-[8px] font-bold text-primary-foreground">★</span>}
-                    </span>
-                    <span className="mt-1 block whitespace-nowrap text-[10px] font-medium text-foreground">
-                      {n.name}
-                    </span>
-                  </button>
-                ))}
+                      <circle
+                        r={n.hq ? 7 : 5}
+                        fill={n.hq ? "url(#hqGrad)" : "oklch(0.82 0.16 220)"}
+                        stroke={active === n.id ? "white" : "oklch(0.95 0.02 220)"}
+                        strokeWidth={active === n.id ? 2 : 1}
+                        style={{
+                          filter: "drop-shadow(0 0 6px oklch(0.82 0.16 220))",
+                        }}
+                      />
+                      <text
+                        textAnchor="middle"
+                        y={-12}
+                        style={{
+                          fontFamily: "inherit",
+                          fontSize: 11,
+                          fontWeight: 600,
+                          fill: "oklch(0.98 0 0)",
+                          paintOrder: "stroke",
+                          stroke: "oklch(0.20 0.02 220 / 0.85)",
+                          strokeWidth: 3,
+                        }}
+                      >
+                        {n.name}
+                      </text>
+                    </Marker>
+                  ))}
+                </ComposableMap>
+                <div className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-background/40 px-2 py-1 text-[10px] uppercase tracking-wider text-muted-foreground backdrop-blur">
+                  ★ HQ — Kigali, Rwanda
+                </div>
               </div>
             </GlassCard>
 
