@@ -3,7 +3,7 @@ import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
 
 const AFRICA_TOPO =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/africa.json";
@@ -133,6 +133,21 @@ function FootprintPage() {
                       })
                     }
                   </Geographies>
+
+                  {nodes
+                    .filter((n) => !n.hq)
+                    .map((n) => (
+                      <Line
+                        key={`line-${n.id}`}
+                        from={hq.coords}
+                        to={n.coords}
+                        stroke="oklch(0.85 0.16 220 / 0.85)"
+                        strokeWidth={1.5}
+                        strokeLinecap="round"
+                        strokeDasharray="4 4"
+                        className="footprint-flow"
+                      />
+                    ))}
 
                   {nodes.map((n) => (
                     <Marker
