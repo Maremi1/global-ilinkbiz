@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { Building2, Globe, Network } from "lucide-react";
+import { Building2, Globe, Network, Shield, Copyright, Cpu, BookOpen, BadgeCheck } from "lucide-react";
 
 export const Route = createFileRoute("/architecture")({
   head: () => ({
@@ -114,6 +114,110 @@ function ArchitecturePage() {
                 </ul>
               </GlassCard>
             ))}
+          </div>
+
+          {/* IP SHIELD — Macro Layer */}
+          <div className="mt-24">
+            <div className="reveal max-w-2xl">
+              <span className="text-xs uppercase tracking-[0.25em] text-accent-cyan">
+                The Macro Layer
+              </span>
+              <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">
+                The <span className="text-gradient">IP Shield.</span>
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Every asset that powers the ecosystem — the brand, the
+                methodologies, the technology — is custodied centrally and
+                licensed outward. One vault, one chain of trust.
+              </p>
+            </div>
+
+            <GlassCard
+              strong
+              hover={false}
+              className="mt-8 overflow-hidden"
+              style={{
+                backgroundImage:
+                  "linear-gradient(oklch(0.85 0.02 220 / 0.06) 1px, transparent 1px), linear-gradient(90deg, oklch(0.85 0.02 220 / 0.06) 1px, transparent 1px)",
+                backgroundSize: "24px 24px",
+              }}
+            >
+              <div className="relative grid items-center gap-8 py-8 md:grid-cols-[1fr_auto_1fr] md:gap-4 md:py-12">
+                {/* Left column assets */}
+                <div className="flex flex-col gap-6 md:gap-12">
+                  {[
+                    { icon: BadgeCheck, title: "Trademarks, Brand Names & Logos" },
+                    { icon: BookOpen, title: "Proprietary Methodologies & Curricula" },
+                  ].map((a) => (
+                    <div
+                      key={a.title}
+                      className="relative flex items-center gap-3 rounded-xl border border-accent-cyan/40 bg-background/40 p-3 backdrop-blur-sm md:ml-4"
+                    >
+                      <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan">
+                        <a.icon size={22} />
+                      </div>
+                      <div className="text-sm font-medium leading-tight">{a.title}</div>
+                      <div
+                        className="equity-line absolute left-full top-1/2 hidden h-0.5 w-12 -translate-y-1/2 bg-gradient-to-r from-accent-cyan/70 to-accent-cyan/20 md:block"
+                        aria-hidden
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Center vault */}
+                <div className="relative mx-auto flex flex-col items-center">
+                  <div className="text-xs uppercase tracking-[0.25em] text-accent-cyan">
+                    The IP Shield
+                  </div>
+                  <div className="relative mt-4">
+                    <div className="absolute inset-0 -m-8 rounded-full bg-[radial-gradient(circle,oklch(0.65_0.18_230/0.45),transparent_70%)] blur-2xl" />
+                    <div className="relative grid h-44 w-44 place-items-center rounded-3xl border-2 border-accent-cyan/60 bg-gradient-to-br from-accent-blue/40 to-accent-cyan/20 shadow-[0_0_60px_oklch(0.65_0.18_230/0.5)]">
+                      <Shield
+                        size={64}
+                        className="text-accent-cyan drop-shadow-[0_0_12px_var(--accent-cyan)]"
+                        strokeWidth={1.4}
+                      />
+                      <div className="absolute bottom-3 font-display text-sm font-bold tracking-tight">
+                        iLink <span className="text-accent-cyan">Global</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right column assets */}
+                <div className="flex flex-col gap-6 md:gap-12">
+                  {[
+                    { icon: Copyright, title: "Copyrights & Patents" },
+                    { icon: Cpu, title: "Software & Artificial Intelligence Systems" },
+                  ].map((a) => (
+                    <div
+                      key={a.title}
+                      className="relative flex items-center gap-3 rounded-xl border border-accent-cyan/40 bg-background/40 p-3 backdrop-blur-sm md:mr-4"
+                    >
+                      <div
+                        className="equity-line equity-line-delay-2 absolute right-full top-1/2 hidden h-0.5 w-12 -translate-y-1/2 bg-gradient-to-l from-accent-cyan/70 to-accent-cyan/20 md:block"
+                        aria-hidden
+                      />
+                      <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan">
+                        <a.icon size={22} />
+                      </div>
+                      <div className="text-sm font-medium leading-tight">{a.title}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Royalty banner */}
+              <div className="-mx-6 -mb-6 mt-2 border-t-2 border-accent-cyan/50 bg-gradient-to-r from-accent-blue/40 via-accent-blue/30 to-accent-blue/40 px-6 py-5 text-center">
+                <p className="text-sm sm:text-base">
+                  iLink Global generates revenue exclusively by{" "}
+                  <span className="font-semibold text-accent-cyan">licensing this protected IP</span>{" "}
+                  to national entities in exchange for{" "}
+                  <span className="font-semibold text-accent-cyan">royalties</span>.
+                </p>
+              </div>
+            </GlassCard>
           </div>
 
           {/* EQUITY TREE — 100% chain of custody */}
