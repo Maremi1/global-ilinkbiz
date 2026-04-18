@@ -32,7 +32,7 @@ function Shape({
       distort={0.35}
       speed={1.6}
       transparent
-      opacity={0.55}
+      opacity={0.45}
     />
   );
 
@@ -87,12 +87,12 @@ export default function AnimatedBackground() {
         </Suspense>
       </Canvas>
 
-      {/* Subtle vignette overlay */}
+      {/* Soft light vignette overlay */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, oklch(0.12 0.04 252 / 0.55) 100%)",
+            "radial-gradient(ellipse at center, transparent 50%, oklch(0.985 0.008 230 / 0.55) 100%)",
         }}
       />
     </div>
