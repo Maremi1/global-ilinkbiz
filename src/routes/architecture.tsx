@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
+import { HeroBanner } from "@/components/HeroBanner";
 import { Building2, Globe, Network, Shield, Copyright, Cpu, BookOpen, BadgeCheck } from "lucide-react";
+import heroArch from "@/assets/hero-architecture.jpg";
 
 export const Route = createFileRoute("/architecture")({
   head: () => ({
@@ -74,6 +76,7 @@ const nationals = [
 function ArchitecturePage() {
   return (
     <PageShell>
+      <HeroBanner src={heroArch} alt="Modern African boardroom overlooking savanna" />
       <section className="px-4">
         <div className="mx-auto w-[min(1200px,94%)] py-12 md:py-20">
           <div className="reveal max-w-3xl">
