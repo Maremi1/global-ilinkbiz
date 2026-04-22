@@ -158,34 +158,45 @@ function OperationsPage() {
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">The Value Creation Loop</h2>
 
-            <GlassCard strong className="mt-5">
-              <div className="grid items-center gap-6 md:grid-cols-5">
-                {[
-                  { t: "Capital", c: "from investors" },
-                  { t: "Allocation", c: "by Int'l Mgmt" },
-                  { t: "Operations", c: "in 4 countries" },
-                  { t: "Revenue", c: "in 4 sectors" },
-                  { t: "Returns", c: "+ IP royalties" },
-                ].map((step, i, arr) => (
-                  <div key={step.t} className="flex items-center gap-3 md:flex-col md:gap-2">
-                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/40 to-accent-blue/40 font-display text-sm font-bold text-primary-foreground shadow-[0_0_20px_var(--accent-cyan)]">
+            <div className="mt-6 space-y-0">
+              {[
+                { t: "Capital", c: "Investors inject capital into the ecosystem", icon: "💰" },
+                { t: "Allocation", c: "International management deploys funds strategically", icon: "🧭" },
+                { t: "Operations", c: "National companies execute across 4 countries", icon: "⚙️" },
+                { t: "Revenue", c: "Four sectors generate diversified income streams", icon: "📈" },
+                { t: "Returns", c: "Dividends + IP royalties compound ecosystem value", icon: "🔄" },
+              ].map((step, i, arr) => (
+                <div key={step.t} className="relative flex items-stretch gap-5">
+                  {/* Vertical timeline */}
+                  <div className="flex flex-col items-center">
+                    <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-accent-cyan/60 bg-accent-cyan/10 font-display text-sm font-bold text-accent-cyan shadow-[0_0_16px_var(--accent-cyan)]">
                       {i + 1}
                     </div>
-                    <div className="md:text-center">
-                      <div className="font-display text-sm font-semibold">{step.t}</div>
-                      <div className="text-[11px] text-muted-foreground">{step.c}</div>
-                    </div>
                     {i < arr.length - 1 && (
-                      <div className="hidden h-px w-full bg-gradient-to-r from-accent-cyan/60 to-transparent md:block" />
+                      <div className="equity-line w-px flex-1 bg-gradient-to-b from-accent-cyan/50 to-accent-cyan/10" />
                     )}
                   </div>
-                ))}
-              </div>
-              <div className="mt-6 rounded-xl border border-accent-cyan/20 bg-accent-cyan/5 p-4 text-sm text-muted-foreground">
-                Returns flow back to the international layer as dividends and
-                upward to the global IP layer as royalties — closing the loop
+
+                  {/* Content card */}
+                  <GlassCard className="mb-3 flex-1 !p-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl">{step.icon}</span>
+                      <div>
+                        <h3 className="font-display text-base font-semibold">{step.t}</h3>
+                        <p className="mt-0.5 text-sm text-muted-foreground">{step.c}</p>
+                      </div>
+                    </div>
+                  </GlassCard>
+                </div>
+              ))}
+            </div>
+
+            <GlassCard strong className="mt-4 !p-4">
+              <p className="text-center text-sm text-muted-foreground">
+                <span className="font-semibold text-accent-cyan">↻</span>{" "}
+                Returns flow back as dividends and upward as royalties — closing the loop
                 and compounding ecosystem value with every cycle.
-              </div>
+              </p>
             </GlassCard>
           </div>
         </div>
