@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
+import { HeroBanner } from "@/components/HeroBanner";
+import heroOps from "@/assets/hero-operations.jpg";
 import {
   BookOpen,
   ShoppingBag,

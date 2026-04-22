@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
+import { HeroBanner } from "@/components/HeroBanner";
+import heroContact from "@/assets/hero-contact.jpg";
 import { Mail, Globe, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 

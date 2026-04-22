@@ -28,6 +28,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <PageShell>
+      <HeroBanner src={heroHome} alt="Aerial view of Kigali cityscape at golden hour" />
       {/* HERO */}
       <section className="relative px-4">
         <div className="mx-auto w-[min(1200px,94%)] py-16 md:py-24">

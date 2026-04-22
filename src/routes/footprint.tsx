@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
+import { HeroBanner } from "@/components/HeroBanner";
+import heroFootprint from "@/assets/hero-footprint.jpg";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
