@@ -64,6 +64,7 @@ function FootprintPage() {
 
   return (
     <PageShell>
+      <HeroBanner src={heroFootprint} alt="Aerial view of Africa with glowing city connections" />
       <section className="px-4">
         <div className="mx-auto w-[min(1200px,94%)] py-12 md:py-20">
           <div className="reveal max-w-3xl">

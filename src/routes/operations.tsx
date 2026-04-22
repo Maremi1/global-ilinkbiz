@@ -67,6 +67,7 @@ const meso = [
 function OperationsPage() {
   return (
     <PageShell>
+      <HeroBanner src={heroOps} alt="Vibrant African marketplace with colorful textiles" />
       <section className="px-4">
         <div className="mx-auto w-[min(1200px,94%)] py-12 md:py-20">
           <div className="reveal max-w-3xl">

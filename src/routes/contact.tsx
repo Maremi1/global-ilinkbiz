@@ -30,6 +30,7 @@ function ContactPage() {
 
   return (
     <PageShell>
+      <HeroBanner src={heroContact} alt="Modern glass office entrance in Kigali" />
       <section className="px-4">
         <div className="mx-auto w-[min(1100px,94%)] py-12 md:py-20">
           <div className="reveal max-w-2xl">
