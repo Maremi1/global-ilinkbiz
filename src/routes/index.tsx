@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { HeroBanner } from "@/components/HeroBanner";
 import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
-import heroHome from "@/assets/hero-home.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,7 +26,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <PageShell>
-      <HeroBanner src={heroHome} alt="Aerial view of Kigali cityscape at golden hour" />
       {/* HERO */}
       <section className="relative px-4">
         <div className="mx-auto w-[min(1200px,94%)] py-16 md:py-24">

@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { HeroBanner } from "@/components/HeroBanner";
-import heroContact from "@/assets/hero-contact.jpg";
 import { Mail, Globe, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -30,7 +28,6 @@ function ContactPage() {
 
   return (
     <PageShell>
-      <HeroBanner src={heroContact} alt="Modern glass office entrance in Kigali" />
       <section className="px-4">
         <div className="mx-auto w-[min(1100px,94%)] py-12 md:py-20">
           <div className="reveal max-w-2xl">

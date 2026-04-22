@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { HeroBanner } from "@/components/HeroBanner";
-import heroFootprint from "@/assets/hero-footprint.jpg";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
@@ -64,7 +62,6 @@ function FootprintPage() {
 
   return (
     <PageShell>
-      <HeroBanner src={heroFootprint} alt="Aerial view of Africa with glowing city connections" />
       <section className="px-4">
         <div className="mx-auto w-[min(1200px,94%)] py-12 md:py-20">
           <div className="reveal max-w-3xl">
