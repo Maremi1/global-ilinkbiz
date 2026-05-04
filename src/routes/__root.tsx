@@ -44,6 +44,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "iLink Global — Structuring a Global Ecosystem" },
+      { name: "description", content: "Globalink is a dynamic website showcasing client profiles with interactive 3D backgrounds and a glassmorphism design." },
+      { property: "og:description", content: "Globalink is a dynamic website showcasing client profiles with interactive 3D backgrounds and a glassmorphism design." },
+      { name: "twitter:description", content: "Globalink is a dynamic website showcasing client profiles with interactive 3D backgrounds and a glassmorphism design." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4500738-47b3-428b-b970-bae3f4b851c6/id-preview-e8f49159--f5bebb16-44bf-4574-8ea4-fae0f82590cf.lovable.app-1776848912862.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e4500738-47b3-428b-b970-bae3f4b851c6/id-preview-e8f49159--f5bebb16-44bf-4574-8ea4-fae0f82590cf.lovable.app-1776848912862.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
