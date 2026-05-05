@@ -42,8 +42,8 @@ export default function AnimatedBackground() {
       {
         x: width * 0.25,
         y: height * 0.35,
-        vx: 2.4,
-        vy: 1.8,
+        vx: 0.8,
+        vy: 0.6,
         r: radius,
         color: "rgba(255,255,255,0.95)",
         glow: "rgba(255,255,255,0.55)",
@@ -51,8 +51,8 @@ export default function AnimatedBackground() {
       {
         x: width * 0.7,
         y: height * 0.6,
-        vx: -2.2,
-        vy: 2.1,
+        vx: -0.7,
+        vy: 0.75,
         r: radius * 1.05,
         color: "rgba(59,130,246,0.95)", // blue-500
         glow: "rgba(37,99,235,0.65)",
