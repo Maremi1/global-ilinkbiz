@@ -29,6 +29,7 @@ function Index() {
     <PageShell>
       {/* HERO */}
       <section className="relative px-4">
+        <HeroAmbientVideo />
         <div className="mx-auto w-[min(1200px,94%)] py-16 md:py-24">
           <div className="reveal max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-accent-cyan">
