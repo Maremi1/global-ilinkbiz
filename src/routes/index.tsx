@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
+import HeroAmbientVideo from "@/components/HeroAmbientVideo";
 import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
