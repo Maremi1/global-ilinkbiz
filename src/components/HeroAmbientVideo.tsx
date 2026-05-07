@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import heroVideoAsset from "@/assets/hero-ambient-v2.mp4.asset.json";
+import heroVideoAsset from "@/assets/hero-ambient-v3.mp4.asset.json";
 import heroPoster from "@/assets/hero-ambient-poster.jpg";
 
 /**
