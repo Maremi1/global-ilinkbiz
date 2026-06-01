@@ -281,4 +281,26 @@
   @keyframes shield-spin-reverse { to { transform: rotate(-360deg); } }
   .shield-orbit { animation: shield-spin 18s linear infinite; transform-origin: center; }
   .shield-orbit-slow { animation: shield-spin-reverse 28s linear infinite; transform-origin: center; }
+
+  /* Aurora background drift — slow, subtle, non-distracting */
+  @keyframes aurora-drift-a {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50%      { transform: translate3d(6%, 4%, 0) scale(1.08); }
+  }
+  @keyframes aurora-drift-b {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50%      { transform: translate3d(-5%, -3%, 0) scale(1.06); }
+  }
+  @keyframes aurora-drift-c {
+    0%, 100% { transform: translate(-50%, 0) scale(1); }
+    50%      { transform: translate(-50%, -4%) scale(1.05); }
+  }
+  .aurora-drift-a { animation: aurora-drift-a 28s ease-in-out infinite; will-change: transform; }
+  .aurora-drift-b { animation: aurora-drift-b 34s ease-in-out infinite; will-change: transform; }
+  .aurora-drift-c { animation: aurora-drift-c 40s ease-in-out infinite; will-change: transform; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aurora-drift-a, .aurora-drift-b, .aurora-drift-c { animation: none; }
+  }
 }
+
