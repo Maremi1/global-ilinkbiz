@@ -42,22 +42,23 @@ export default function AnimatedBackground() {
       {
         x: width * 0.25,
         y: height * 0.35,
-        vx: 0.8,
-        vy: 0.6,
+        vx: 0.55,
+        vy: 0.42,
         r: radius,
-        color: "rgba(255,255,255,0.95)",
-        glow: "rgba(255,255,255,0.55)",
+        color: "rgba(255,255,255,0)",
+        glow: "rgba(180,210,255,0.16)",
       },
       {
         x: width * 0.7,
         y: height * 0.6,
-        vx: -0.7,
-        vy: 0.75,
+        vx: -0.5,
+        vy: 0.52,
         r: radius * 1.05,
-        color: "rgba(59,130,246,0.95)", // blue-500
-        glow: "rgba(37,99,235,0.65)",
+        color: "rgba(59,130,246,0)",
+        glow: "rgba(59,130,246,0.15)",
       },
     ];
+
 
     let raf = 0;
 
@@ -111,42 +112,25 @@ export default function AnimatedBackground() {
         b.vy -= diff * ny;
       }
 
-      // Draw
+      // Draw — soft diffuse bloom only (no solid ball, no highlight)
       for (const ball of balls) {
-        // Soft glow
         const grad = ctx.createRadialGradient(
           ball.x,
           ball.y,
-          ball.r * 0.2,
+          0,
           ball.x,
           ball.y,
-          ball.r * 2.4,
+          ball.r * 3.8,
         );
         grad.addColorStop(0, ball.glow);
+        grad.addColorStop(0.5, ball.glow.replace(/[\d.]+\)$/, "0.06)"));
         grad.addColorStop(1, "rgba(0,0,0,0)");
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ball.r * 2.4, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Solid ball
-        ctx.fillStyle = ball.color;
-        ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Highlight
-        ctx.fillStyle = "rgba(255,255,255,0.35)";
-        ctx.beginPath();
-        ctx.arc(
-          ball.x - ball.r * 0.35,
-          ball.y - ball.r * 0.35,
-          ball.r * 0.28,
-          0,
-          Math.PI * 2,
-        );
+        ctx.arc(ball.x, ball.y, ball.r * 3.8, 0, Math.PI * 2);
         ctx.fill();
       }
+
 
       raf = requestAnimationFrame(step);
     };
@@ -161,7 +145,12 @@ export default function AnimatedBackground() {
 
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 h-full w-full"
+        style={{ filter: "blur(40px)", opacity: 0.85 }}
+      />
     </div>
   );
+
 }
