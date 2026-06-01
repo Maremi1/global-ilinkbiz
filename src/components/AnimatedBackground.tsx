@@ -20,28 +20,28 @@ export default function AnimatedBackground() {
 
       {/* Aurora blob 1 — cyan, top-left */}
       <div
-        className="absolute -top-1/4 -left-1/4 h-[70vh] w-[70vh] rounded-full opacity-60 blur-3xl aurora-drift-a"
+        className="absolute -top-1/4 -left-1/4 h-[70vh] w-[70vh] rounded-full opacity-30 blur-[120px] aurora-drift-a"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.78 0.14 215 / 0.55), transparent 65%)",
+            "radial-gradient(circle, oklch(0.78 0.10 215 / 0.25), transparent 65%)",
         }}
       />
 
       {/* Aurora blob 2 — blue, bottom-right */}
       <div
-        className="absolute -bottom-1/4 -right-1/4 h-[80vh] w-[80vh] rounded-full opacity-55 blur-3xl aurora-drift-b"
+        className="absolute -bottom-1/4 -right-1/4 h-[80vh] w-[80vh] rounded-full opacity-25 blur-[140px] aurora-drift-b"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.65 0.18 255 / 0.5), transparent 65%)",
+            "radial-gradient(circle, oklch(0.65 0.12 255 / 0.20), transparent 65%)",
         }}
       />
 
       {/* Aurora blob 3 — soft white highlight, center */}
       <div
-        className="absolute top-1/3 left-1/2 h-[50vh] w-[50vh] -translate-x-1/2 rounded-full opacity-40 blur-3xl aurora-drift-c"
+        className="absolute top-1/3 left-1/2 h-[50vh] w-[50vh] -translate-x-1/2 rounded-full opacity-20 blur-[100px] aurora-drift-c"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.99 0.005 230 / 0.7), transparent 70%)",
+            "radial-gradient(circle, oklch(0.99 0.005 230 / 0.35), transparent 70%)",
         }}
       />
     </div>
