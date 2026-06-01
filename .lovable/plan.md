@@ -1,55 +1,21 @@
+## Goal
+Reduce visual distraction from the two animated floating balls in `AnimatedBackground.tsx`.
 
+## Approach
+Transform the solid, glowing balls into soft ambient background orbs:
 
-# iLink Global — Corporate Website Plan
+1. **Remove the solid ball fill and highlight** — eliminate the opaque center circle and the bright white specular highlight that make them look like foreground objects.
+2. **Expand the glow radius** — make the radial gradient ~3-4x the ball radius so it reads as a large diffuse light bloom rather than a sharp circle.
+3. **Drop opacity heavily** — reduce the main glow color from `rgba(..., 0.55-0.65)` down to `rgba(..., 0.12-0.18)` so the orbs barely register against the background.
+4. **Add a heavy CSS/Canvas blur layer** — if possible, apply a `filter: blur()` equivalent via canvas or wrap the canvas in a CSS blur to soften edges further.
+5. **Slow the movement slightly more** (optional) — reduce `vx`/`vy` values by another ~30% so the drift is even more ambient.
 
-## Visual Direction
-- **Theme**: Dark navy base (`#0a1428`-ish) with light blue / cyan accents (`#7DD3FC`, `#38BDF8`)
-- **Glassmorphism**: Frosted glass cards with subtle borders, backdrop blur, soft inner glow
-- **Interactive 3D background**: Animated floating shapes (spheres, cubes, torus) using react-three-fiber that subtly react to cursor movement
-- **Radial glares**: Multiple soft cyan/blue radial gradient glows pulsing behind content
-- **Micro-interactions**: Hover lifts, glow on hover, smooth fade-ins on scroll
-- **Typography**: Clean modern sans (Inter / Space Grotesk for headings)
+## Implementation
+- Edit `src/components/AnimatedBackground.tsx`
+- Adjust ball `color`, `glow` alpha values, and glow radius scaling
+- Remove the solid arc + highlight drawing calls
+- Optionally wrap the `<canvas>` in an additional CSS blur/filter layer via the parent `<div>`
 
-## Site Structure (separate routes for SEO)
-
-1. **/** — Home
-   - Hero: "Structuring a Global Ecosystem" + tagline, glass CTA buttons, 3D shapes background
-   - Quick stats: 4 countries, 3 tiers, 100% chain of custody
-   - Brief intro to the 3-layer architecture with glass cards
-   - Footprint teaser (Africa map preview)
-
-2. **/architecture** — The Holding Architecture
-   - 3-Tier diagnostic (Global / International / National) as interactive glass cards
-   - The Equity Tree visualization (iLink Global → International → 4 national entities)
-   - Functional comparison table in a glass panel
-
-3. **/footprint** — Global Footprint
-   - Interactive Africa map with glowing nodes for Rwanda (HQ), Ghana, Ethiopia, Tanzania
-   - HQ card: Vision Arcade Executive Suites, Kigali, Rwanda
-   - Per-country glass cards
-
-4. **/operations** — Operational Ecosystem
-   - 4 sectors as glass cards: Knowledge & Tech · Global Trade · Infrastructure · Core Support
-   - The IP Shield section (Macro layer)
-   - Meso layer: Investment Holding, Strategic Oversight, Expansion Engine, Capital Funnel
-   - Revenue Flow + Value Creation Loop diagrams (rebuilt as animated SVG)
-
-5. **/contact** — Contact
-   - Glass contact form, email `info@ilinkbiz.com`, website `global.ilinkbiz.com`
-   - HQ address, social placeholders
-
-## Shared Components
-- **Glass Navbar** — sticky, blurred, with active link glow
-- **AnimatedBackground** — react-three-fiber canvas (floating low-poly shapes, slow rotation, parallax on mouse) + CSS radial glares layer
-- **GlassCard** — reusable frosted card with hover glow
-- **Footer** — glass strip with logo, links, contact
-
-## Tech
-- TanStack Start routes (one file per page, full SEO meta per route)
-- `@react-three/fiber` + `@react-three/drei` for 3D background
-- Tailwind utilities + custom glass + glow classes in `styles.css`
-- Light scroll-reveal animations (CSS / framer-motion-light approach)
-
-## Content sourced directly from the PDF
-All copy (3-tier table, equity tree, IP shield items, 4 operational sectors, revenue model, HQ address, contact) pulled verbatim from the provided architecture document.
-
+## Acceptance
+- The balls should feel like distant, soft background light blobs rather than interactive foreground objects.
+- Content layered on top should no longer visually compete with the balls.
