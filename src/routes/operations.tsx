@@ -12,6 +12,10 @@ import {
   Rocket,
   Banknote,
 } from "lucide-react";
+import knowledgeImg from "@/assets/photos/sector-knowledge.jpg.asset.json";
+import tradeImg from "@/assets/photos/sector-trade.jpg.asset.json";
+import infraImg from "@/assets/photos/sector-infra.jpg.asset.json";
+import supportImg from "@/assets/photos/sector-support.jpg.asset.json";
 
 export const Route = createFileRoute("/operations")({
   head: () => ({
@@ -37,21 +41,25 @@ const sectors = [
     icon: BookOpen,
     name: "Knowledge & Technology",
     desc: "Education, research, digital platforms and IP-driven products that anchor the ecosystem in expertise.",
+    img: knowledgeImg.url,
   },
   {
     icon: ShoppingBag,
     name: "Global Trade",
     desc: "Cross-border commerce, import/export and distribution channels powered by network advantage.",
+    img: tradeImg.url,
   },
   {
     icon: HardHat,
     name: "Infrastructure",
     desc: "Built environment, logistics and physical assets that give the ecosystem its industrial backbone.",
+    img: infraImg.url,
   },
   {
     icon: LifeBuoy,
     name: "Core Support",
     desc: "Shared services, finance, compliance and operations enabling every other sector to perform.",
+    img: supportImg.url,
   },
 ];
 
