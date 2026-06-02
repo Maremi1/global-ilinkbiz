@@ -238,15 +238,24 @@ function FootprintPage() {
                   <button
                     key={n.id}
                     onClick={() => setActive(n.id)}
-                    className={`rounded-xl border p-3 text-left transition ${
+                    className={`group relative overflow-hidden rounded-xl border text-left transition ${
                       active === n.id
-                        ? "border-accent-cyan/60 bg-accent-cyan/10"
-                        : "border-white/10 bg-white/5 hover:border-accent-cyan/30"
+                        ? "border-accent-cyan/60 ring-1 ring-accent-cyan/40"
+                        : "border-white/10 hover:border-accent-cyan/40"
                     }`}
                   >
-                    <div className="text-sm font-semibold">{n.name}</div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                      {n.role}
+                    <img
+                      src={n.img}
+                      alt={n.name}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/20" />
+                    <div className="relative p-3">
+                      <div className="text-sm font-semibold">{n.name}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                        {n.role}
+                      </div>
                     </div>
                   </button>
                 ))}
