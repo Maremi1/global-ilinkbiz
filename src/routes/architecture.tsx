@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import { Building2, Globe, Network, Shield, Copyright, Cpu, BookOpen, BadgeCheck } from "lucide-react";
+import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
+import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
+import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
 
 export const Route = createFileRoute("/architecture")({
   head: () => ({

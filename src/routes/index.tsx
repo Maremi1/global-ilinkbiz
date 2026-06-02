@@ -3,6 +3,9 @@ import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import HeroAmbientVideo from "@/components/HeroAmbientVideo";
 import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
+import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
+import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
+import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -100,27 +103,41 @@ function Index() {
                 tier: "Tier 1 · Global IP",
                 title: "iLink Global Holdings",
                 desc: "Custodian of the intellectual property, brand, methodologies and global standards. The sovereign apex of the ecosystem.",
+                img: tier1Img.url,
               },
               {
                 icon: Layers,
                 tier: "Tier 2 · International",
                 title: "International Management",
                 desc: "Strategic oversight, capital orchestration and cross-border governance — the bridge between vision and execution.",
+                img: tier2Img.url,
               },
               {
                 icon: Globe2,
                 tier: "Tier 3 · National",
                 title: "Operating Companies",
                 desc: "Locally incorporated entities in Rwanda, Ghana, Ethiopia and Tanzania delivering the ecosystem on the ground.",
+                img: tier3Img.url,
               },
             ].map((c) => (
-              <GlassCard key={c.title} className="reveal">
-                <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
-                  <c.icon size={20} />
+              <GlassCard key={c.title} className="reveal overflow-hidden !p-0">
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={c.img}
+                    alt={c.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
                 </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-accent-cyan">{c.tier}</div>
-                <h3 className="mt-1 font-display text-xl font-semibold">{c.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                <div className="p-6">
+                  <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
+                    <c.icon size={20} />
+                  </div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-accent-cyan">{c.tier}</div>
+                  <h3 className="mt-1 font-display text-xl font-semibold">{c.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                </div>
               </GlassCard>
             ))}
           </div>
