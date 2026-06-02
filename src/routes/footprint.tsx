@@ -4,6 +4,10 @@ import { GlassCard } from "@/components/GlassCard";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
+import rwandaImg from "@/assets/photos/country-rwanda.jpg.asset.json";
+import ghanaImg from "@/assets/photos/country-ghana.jpg.asset.json";
+import ethiopiaImg from "@/assets/photos/country-ethiopia.jpg.asset.json";
+import tanzaniaImg from "@/assets/photos/country-tanzania.jpg.asset.json";
 
 const AFRICA_TOPO =
   "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
@@ -41,7 +45,7 @@ type Node = {
   hq?: boolean;
 };
 
-const nodes: Node[] = [
+const nodes: (Node & { img: string })[] = [
   {
     id: "rw",
     name: "Rwanda",
@@ -49,10 +53,11 @@ const nodes: Node[] = [
     detail: "Vision Arcade Executive Suites, Kigali",
     coords: [30.0619, -1.9441],
     hq: true,
+    img: rwandaImg.url,
   },
-  { id: "gh", name: "Ghana", role: "Operating Co.", detail: "West Africa hub", coords: [-0.1869, 5.6037] },
-  { id: "et", name: "Ethiopia", role: "Operating Co.", detail: "Horn of Africa hub", coords: [38.7578, 9.032] },
-  { id: "tz", name: "Tanzania", role: "Operating Co.", detail: "East Africa hub", coords: [35.7395, -6.163] },
+  { id: "gh", name: "Ghana", role: "Operating Co.", detail: "West Africa hub", coords: [-0.1869, 5.6037], img: ghanaImg.url },
+  { id: "et", name: "Ethiopia", role: "Operating Co.", detail: "Horn of Africa hub", coords: [38.7578, 9.032], img: ethiopiaImg.url },
+  { id: "tz", name: "Tanzania", role: "Operating Co.", detail: "East Africa hub", coords: [35.7395, -6.163], img: tanzaniaImg.url },
 ];
 
 function FootprintPage() {
