@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ilinkLogo from "@/assets/ilink-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -37,17 +38,11 @@ export default function Navbar() {
           )}
         >
           <Link to="/" className="flex items-center gap-2">
-            <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan to-accent-blue shadow-lg shadow-accent-blue/30">
-              <span className="font-display text-lg font-bold text-primary-foreground">i</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-display text-base font-semibold tracking-tight">
-                iLink <span className="text-accent-cyan">Global</span>
-              </div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                Holdings
-              </div>
-            </div>
+            <img
+              src={ilinkLogo.url}
+              alt="iLink Global"
+              className="h-10 w-auto"
+            />
           </Link>
 
           <ul className="hidden items-center gap-1 md:flex">

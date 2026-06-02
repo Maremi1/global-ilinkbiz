@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Globe, MapPin } from "lucide-react";
+import ilinkLogo from "@/assets/ilink-logo.png.asset.json";
 
 export default function Footer() {
   return (
@@ -9,12 +10,7 @@ export default function Footer() {
           <div className="grid gap-8 md:grid-cols-4">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2">
-                <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan to-accent-blue">
-                  <span className="font-display text-lg font-bold text-primary-foreground">i</span>
-                </div>
-                <div className="font-display text-lg font-semibold">
-                  iLink <span className="text-accent-cyan">Global</span>
-                </div>
+                <img src={ilinkLogo.url} alt="iLink Global" className="h-10 w-auto" />
               </div>
               <p className="mt-3 max-w-md text-sm text-muted-foreground">
                 Structuring a global ecosystem across knowledge, trade,
