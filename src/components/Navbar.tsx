@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ilinkLogo from "@/assets/ilink-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
