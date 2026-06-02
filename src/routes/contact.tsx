@@ -3,6 +3,7 @@ import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import { Mail, Globe, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import hqImg from "@/assets/photos/contact-hq.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -47,8 +48,17 @@ function ContactPage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
             {/* Contact details */}
             <div className="flex flex-col gap-4">
-              <GlassCard strong>
-                <div className="flex items-start gap-3">
+              <GlassCard strong className="overflow-hidden !p-0">
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={hqImg.url}
+                    alt="iLink Global headquarters in Kigali"
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                </div>
+                <div className="flex items-start gap-3 p-6">
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent-cyan/15 text-accent-cyan ring-1 ring-accent-cyan/30">
                     <MapPin size={18} />
                   </div>

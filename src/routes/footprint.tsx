@@ -4,6 +4,10 @@ import { GlassCard } from "@/components/GlassCard";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
 import { ComposableMap, Geographies, Geography, Marker, Line } from "react-simple-maps";
+import rwandaImg from "@/assets/photos/country-rwanda.jpg.asset.json";
+import ghanaImg from "@/assets/photos/country-ghana.jpg.asset.json";
+import ethiopiaImg from "@/assets/photos/country-ethiopia.jpg.asset.json";
+import tanzaniaImg from "@/assets/photos/country-tanzania.jpg.asset.json";
 
 const AFRICA_TOPO =
   "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
@@ -41,7 +45,7 @@ type Node = {
   hq?: boolean;
 };
 
-const nodes: Node[] = [
+const nodes: (Node & { img: string })[] = [
   {
     id: "rw",
     name: "Rwanda",
@@ -49,10 +53,11 @@ const nodes: Node[] = [
     detail: "Vision Arcade Executive Suites, Kigali",
     coords: [30.0619, -1.9441],
     hq: true,
+    img: rwandaImg.url,
   },
-  { id: "gh", name: "Ghana", role: "Operating Co.", detail: "West Africa hub", coords: [-0.1869, 5.6037] },
-  { id: "et", name: "Ethiopia", role: "Operating Co.", detail: "Horn of Africa hub", coords: [38.7578, 9.032] },
-  { id: "tz", name: "Tanzania", role: "Operating Co.", detail: "East Africa hub", coords: [35.7395, -6.163] },
+  { id: "gh", name: "Ghana", role: "Operating Co.", detail: "West Africa hub", coords: [-0.1869, 5.6037], img: ghanaImg.url },
+  { id: "et", name: "Ethiopia", role: "Operating Co.", detail: "Horn of Africa hub", coords: [38.7578, 9.032], img: ethiopiaImg.url },
+  { id: "tz", name: "Tanzania", role: "Operating Co.", detail: "East Africa hub", coords: [35.7395, -6.163], img: tanzaniaImg.url },
 ];
 
 function FootprintPage() {
@@ -198,23 +203,34 @@ function FootprintPage() {
 
             {/* DETAIL PANEL */}
             <div className="flex flex-col gap-4">
-              <GlassCard strong>
-                <div className="flex items-center gap-2 text-accent-cyan">
-                  <MapPin size={16} />
-                  <span className="text-xs uppercase tracking-[0.2em]">{current.role}</span>
+              <GlassCard strong className="overflow-hidden !p-0">
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={current.img}
+                    alt={current.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
                 </div>
-                <h3 className="mt-2 font-display text-2xl font-semibold">{current.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{current.detail}</p>
-                {current.hq && (
-                  <div className="mt-4 rounded-xl border border-accent-cyan/30 bg-accent-cyan/5 p-4 text-sm">
-                    <div className="font-medium text-foreground">Headquarters</div>
-                    <div className="mt-1 text-muted-foreground">
-                      Vision Arcade Executive Suites
-                      <br />
-                      Kigali, Rwanda
-                    </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-accent-cyan">
+                    <MapPin size={16} />
+                    <span className="text-xs uppercase tracking-[0.2em]">{current.role}</span>
                   </div>
-                )}
+                  <h3 className="mt-2 font-display text-2xl font-semibold">{current.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{current.detail}</p>
+                  {current.hq && (
+                    <div className="mt-4 rounded-xl border border-accent-cyan/30 bg-accent-cyan/5 p-4 text-sm">
+                      <div className="font-medium text-foreground">Headquarters</div>
+                      <div className="mt-1 text-muted-foreground">
+                        Vision Arcade Executive Suites
+                        <br />
+                        Kigali, Rwanda
+                      </div>
+                    </div>
+                  )}
+                </div>
               </GlassCard>
 
               <div className="grid grid-cols-2 gap-3">
@@ -222,15 +238,24 @@ function FootprintPage() {
                   <button
                     key={n.id}
                     onClick={() => setActive(n.id)}
-                    className={`rounded-xl border p-3 text-left transition ${
+                    className={`group relative overflow-hidden rounded-xl border text-left transition ${
                       active === n.id
-                        ? "border-accent-cyan/60 bg-accent-cyan/10"
-                        : "border-white/10 bg-white/5 hover:border-accent-cyan/30"
+                        ? "border-accent-cyan/60 ring-1 ring-accent-cyan/40"
+                        : "border-white/10 hover:border-accent-cyan/40"
                     }`}
                   >
-                    <div className="text-sm font-semibold">{n.name}</div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                      {n.role}
+                    <img
+                      src={n.img}
+                      alt={n.name}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/20" />
+                    <div className="relative p-3">
+                      <div className="text-sm font-semibold">{n.name}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                        {n.role}
+                      </div>
                     </div>
                   </button>
                 ))}

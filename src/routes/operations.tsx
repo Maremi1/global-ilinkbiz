@@ -12,6 +12,10 @@ import {
   Rocket,
   Banknote,
 } from "lucide-react";
+import knowledgeImg from "@/assets/photos/sector-knowledge.jpg.asset.json";
+import tradeImg from "@/assets/photos/sector-trade.jpg.asset.json";
+import infraImg from "@/assets/photos/sector-infra.jpg.asset.json";
+import supportImg from "@/assets/photos/sector-support.jpg.asset.json";
 
 export const Route = createFileRoute("/operations")({
   head: () => ({
@@ -37,21 +41,25 @@ const sectors = [
     icon: BookOpen,
     name: "Knowledge & Technology",
     desc: "Education, research, digital platforms and IP-driven products that anchor the ecosystem in expertise.",
+    img: knowledgeImg.url,
   },
   {
     icon: ShoppingBag,
     name: "Global Trade",
     desc: "Cross-border commerce, import/export and distribution channels powered by network advantage.",
+    img: tradeImg.url,
   },
   {
     icon: HardHat,
     name: "Infrastructure",
     desc: "Built environment, logistics and physical assets that give the ecosystem its industrial backbone.",
+    img: infraImg.url,
   },
   {
     icon: LifeBuoy,
     name: "Core Support",
     desc: "Shared services, finance, compliance and operations enabling every other sector to perform.",
+    img: supportImg.url,
   },
 ];
 
@@ -138,13 +146,24 @@ function OperationsPage() {
 
             <div className="mt-5 grid gap-5 md:grid-cols-2">
               {sectors.map((s) => (
-                <GlassCard key={s.name} className="flex gap-4">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
-                    <s.icon size={22} />
+                <GlassCard key={s.name} className="overflow-hidden !p-0">
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={s.img}
+                      alt={s.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
                   </div>
-                  <div>
-                    <h3 className="font-display text-lg font-semibold">{s.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+                  <div className="flex gap-4 p-6">
+                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
+                      <s.icon size={22} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-semibold">{s.name}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+                    </div>
                   </div>
                 </GlassCard>
               ))}
