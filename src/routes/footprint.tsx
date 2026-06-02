@@ -203,23 +203,34 @@ function FootprintPage() {
 
             {/* DETAIL PANEL */}
             <div className="flex flex-col gap-4">
-              <GlassCard strong>
-                <div className="flex items-center gap-2 text-accent-cyan">
-                  <MapPin size={16} />
-                  <span className="text-xs uppercase tracking-[0.2em]">{current.role}</span>
+              <GlassCard strong className="overflow-hidden !p-0">
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={current.img}
+                    alt={current.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
                 </div>
-                <h3 className="mt-2 font-display text-2xl font-semibold">{current.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{current.detail}</p>
-                {current.hq && (
-                  <div className="mt-4 rounded-xl border border-accent-cyan/30 bg-accent-cyan/5 p-4 text-sm">
-                    <div className="font-medium text-foreground">Headquarters</div>
-                    <div className="mt-1 text-muted-foreground">
-                      Vision Arcade Executive Suites
-                      <br />
-                      Kigali, Rwanda
-                    </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-accent-cyan">
+                    <MapPin size={16} />
+                    <span className="text-xs uppercase tracking-[0.2em]">{current.role}</span>
                   </div>
-                )}
+                  <h3 className="mt-2 font-display text-2xl font-semibold">{current.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{current.detail}</p>
+                  {current.hq && (
+                    <div className="mt-4 rounded-xl border border-accent-cyan/30 bg-accent-cyan/5 p-4 text-sm">
+                      <div className="font-medium text-foreground">Headquarters</div>
+                      <div className="mt-1 text-muted-foreground">
+                        Vision Arcade Executive Suites
+                        <br />
+                        Kigali, Rwanda
+                      </div>
+                    </div>
+                  )}
+                </div>
               </GlassCard>
 
               <div className="grid grid-cols-2 gap-3">
