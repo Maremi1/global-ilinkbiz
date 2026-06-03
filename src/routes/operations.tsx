@@ -137,6 +137,25 @@ function OperationsPage() {
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">International Management</h2>
 
+            <GlassCard className="mt-5 overflow-hidden !p-0">
+              <div className="relative h-64 md:h-80 overflow-hidden">
+                <img
+                  src={mesoImg.url}
+                  alt="International management team reviewing strategy"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="max-w-xl text-sm text-muted-foreground">
+                    A continental leadership team allocating capital, setting
+                    standards and orchestrating expansion across four
+                    jurisdictions.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+
             <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {meso.map((m) => (
                 <GlassCard key={m.name}>
