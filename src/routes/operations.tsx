@@ -16,6 +16,10 @@ import knowledgeImg from "@/assets/photos/sector-knowledge.jpg.asset.json";
 import tradeImg from "@/assets/photos/sector-trade.jpg.asset.json";
 import infraImg from "@/assets/photos/sector-infra.jpg.asset.json";
 import supportImg from "@/assets/photos/sector-support.jpg.asset.json";
+import ipShieldImg from "@/assets/photos/ops-ipshield.jpg.asset.json";
+import mesoImg from "@/assets/photos/ops-meso.jpg.asset.json";
+import valueLoopImg from "@/assets/photos/ops-valueloop.jpg.asset.json";
+import teamImg from "@/assets/photos/ops-team.jpg.asset.json";
 
 export const Route = createFileRoute("/operations")({
   head: () => ({
@@ -96,16 +100,25 @@ function OperationsPage() {
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">The IP Shield</h2>
 
-            <GlassCard strong className="mt-5">
-              <div className="flex flex-col items-center gap-6 md:flex-row">
-                <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-cyan/40 to-accent-blue/40 ring-1 ring-accent-cyan/40">
-                  <Shield size={32} className="text-accent-cyan" />
+            <GlassCard strong className="mt-5 overflow-hidden !p-0">
+              <div className="grid md:grid-cols-2">
+                <div className="relative h-56 md:h-auto overflow-hidden">
+                  <img
+                    src={ipShieldImg.url}
+                    alt="iLink IP shield"
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 md:bg-gradient-to-l" />
                 </div>
-                <div>
+                <div className="flex flex-col items-start gap-4 p-6 md:p-8">
+                  <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-cyan/40 to-accent-blue/40 ring-1 ring-accent-cyan/40">
+                    <Shield size={28} className="text-accent-cyan" />
+                  </div>
                   <h3 className="font-display text-xl font-semibold">
                     Sovereign custody of the iLink IP
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     Brand, methodologies, technology stack and operating
                     standards live at the apex — licensed downstream, never
                     exposed to operational risk. This shield is what makes the
@@ -123,6 +136,25 @@ function OperationsPage() {
               Meso Layer
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">International Management</h2>
+
+            <GlassCard className="mt-5 overflow-hidden !p-0">
+              <div className="relative h-64 md:h-80 overflow-hidden">
+                <img
+                  src={mesoImg.url}
+                  alt="International management team reviewing strategy"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="max-w-xl text-sm text-muted-foreground">
+                    A continental leadership team allocating capital, setting
+                    standards and orchestrating expansion across four
+                    jurisdictions.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {meso.map((m) => (
@@ -176,6 +208,27 @@ function OperationsPage() {
               Revenue Flow
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">The Value Creation Loop</h2>
+
+            <div className="mt-5 grid gap-5 md:grid-cols-2">
+              <GlassCard className="overflow-hidden !p-0">
+                <img
+                  src={valueLoopImg.url}
+                  alt="Capital flow loop visualization"
+                  loading="lazy"
+                  className="h-full max-h-72 w-full object-cover"
+                />
+              </GlassCard>
+              <GlassCard className="overflow-hidden !p-0">
+                <img
+                  src={teamImg.url}
+                  alt="African operating team in action"
+                  loading="lazy"
+                  className="h-full max-h-72 w-full object-cover"
+                />
+              </GlassCard>
+            </div>
+
+
 
             <div className="mt-6 space-y-0">
               {[
