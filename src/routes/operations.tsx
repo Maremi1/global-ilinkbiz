@@ -145,7 +145,7 @@ function OperationsPage() {
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="max-w-xl text-sm text-muted-foreground">
                     A continental leadership team allocating capital, setting
