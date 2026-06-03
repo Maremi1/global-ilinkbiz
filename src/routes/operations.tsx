@@ -209,6 +209,27 @@ function OperationsPage() {
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">The Value Creation Loop</h2>
 
+            <div className="mt-5 grid gap-5 md:grid-cols-2">
+              <GlassCard className="overflow-hidden !p-0">
+                <img
+                  src={valueLoopImg.url}
+                  alt="Capital flow loop visualization"
+                  loading="lazy"
+                  className="h-full max-h-72 w-full object-cover"
+                />
+              </GlassCard>
+              <GlassCard className="overflow-hidden !p-0">
+                <img
+                  src={teamImg.url}
+                  alt="African operating team in action"
+                  loading="lazy"
+                  className="h-full max-h-72 w-full object-cover"
+                />
+              </GlassCard>
+            </div>
+
+
+
             <div className="mt-6 space-y-0">
               {[
                 { t: "Capital", c: "Investors inject capital into the ecosystem", icon: "💰" },
