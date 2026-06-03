@@ -87,9 +87,8 @@ function OperationsPage() {
               Capital in. <span className="text-gradient">Value compounded.</span>
             </h1>
             <p className="mt-5 text-muted-foreground">
-              The iLink Global operating model spans four sectors, protected by
-              an IP shield and orchestrated by an international management
-              layer that closes the value loop.
+              The iLink Global operating model spans four sectors, protected by an IP shield and
+              orchestrated by an international management layer that closes the value loop.
             </p>
           </div>
 
@@ -118,11 +117,9 @@ function OperationsPage() {
                     Sovereign custody of the iLink IP
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Brand, methodologies, technology stack and operating
-                    standards live at the apex — licensed downstream, never
-                    exposed to operational risk. This shield is what makes the
-                    ecosystem durable, transferable and investable across
-                    jurisdictions.
+                    Brand, methodologies, technology stack and operating standards live at the apex
+                    — licensed downstream, never exposed to operational risk. This shield is what
+                    makes the ecosystem durable, transferable and investable across jurisdictions.
                   </p>
                 </div>
               </div>
@@ -131,9 +128,7 @@ function OperationsPage() {
 
           {/* MESO LAYER */}
           <div className="mt-16">
-            <span className="text-xs uppercase tracking-[0.25em] text-accent-cyan">
-              Meso Layer
-            </span>
+            <span className="text-xs uppercase tracking-[0.25em] text-accent-cyan">Meso Layer</span>
             <h2 className="mt-2 font-display text-3xl font-bold">International Management</h2>
 
             <GlassCard className="mt-5 overflow-hidden !p-0">
@@ -147,9 +142,8 @@ function OperationsPage() {
               </div>
               <div className="p-6">
                 <p className="max-w-xl text-sm text-muted-foreground">
-                  A continental leadership team allocating capital, setting
-                  standards and orchestrating expansion across four
-                  jurisdictions.
+                  A continental leadership team allocating capital, setting standards and
+                  orchestrating expansion across four jurisdictions.
                 </p>
               </div>
             </GlassCard>
@@ -225,15 +219,21 @@ function OperationsPage() {
               </GlassCard>
             </div>
 
-
-
             <div className="mt-6 space-y-0">
               {[
                 { t: "Capital", c: "Investors inject capital into the ecosystem", icon: "💰" },
-                { t: "Allocation", c: "International management deploys funds strategically", icon: "🧭" },
+                {
+                  t: "Allocation",
+                  c: "International management deploys funds strategically",
+                  icon: "🧭",
+                },
                 { t: "Operations", c: "National companies execute across 4 countries", icon: "⚙️" },
                 { t: "Revenue", c: "Four sectors generate diversified income streams", icon: "📈" },
-                { t: "Returns", c: "Dividends + IP royalties compound ecosystem value", icon: "🔄" },
+                {
+                  t: "Returns",
+                  c: "Dividends + IP royalties compound ecosystem value",
+                  icon: "🔄",
+                },
               ].map((step, i, arr) => (
                 <div key={step.t} className="relative flex items-stretch gap-5">
                   {/* Vertical timeline */}
@@ -262,9 +262,9 @@ function OperationsPage() {
 
             <GlassCard strong className="mt-4 !p-4">
               <p className="text-center text-sm text-muted-foreground">
-                <span className="font-semibold text-accent-cyan">↻</span>{" "}
-                Returns flow back as dividends and upward as royalties — closing the loop
-                and compounding ecosystem value with every cycle.
+                <span className="font-semibold text-accent-cyan">↻</span> Returns flow back as
+                dividends and upward as royalties — closing the loop and compounding ecosystem value
+                with every cycle.
               </p>
             </GlassCard>
           </div>
