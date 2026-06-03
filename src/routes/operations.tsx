@@ -109,7 +109,7 @@ function OperationsPage() {
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 md:bg-gradient-to-l" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/40 md:bg-gradient-to-l" />
                 </div>
                 <div className="flex flex-col items-start gap-4 p-6 md:p-8">
                   <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-cyan/40 to-accent-blue/40 ring-1 ring-accent-cyan/40">
@@ -145,7 +145,7 @@ function OperationsPage() {
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="max-w-xl text-sm text-muted-foreground">
                     A continental leadership team allocating capital, setting
@@ -186,7 +186,7 @@ function OperationsPage() {
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
                   </div>
                   <div className="flex gap-4 p-6">
                     <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
