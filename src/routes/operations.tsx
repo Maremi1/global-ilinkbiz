@@ -16,6 +16,10 @@ import knowledgeImg from "@/assets/photos/sector-knowledge.jpg.asset.json";
 import tradeImg from "@/assets/photos/sector-trade.jpg.asset.json";
 import infraImg from "@/assets/photos/sector-infra.jpg.asset.json";
 import supportImg from "@/assets/photos/sector-support.jpg.asset.json";
+import ipShieldImg from "@/assets/photos/ops-ipshield.jpg.asset.json";
+import mesoImg from "@/assets/photos/ops-meso.jpg.asset.json";
+import valueLoopImg from "@/assets/photos/ops-valueloop.jpg.asset.json";
+import teamImg from "@/assets/photos/ops-team.jpg.asset.json";
 
 export const Route = createFileRoute("/operations")({
   head: () => ({
