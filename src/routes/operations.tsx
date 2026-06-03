@@ -100,16 +100,25 @@ function OperationsPage() {
             </span>
             <h2 className="mt-2 font-display text-3xl font-bold">The IP Shield</h2>
 
-            <GlassCard strong className="mt-5">
-              <div className="flex flex-col items-center gap-6 md:flex-row">
-                <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-cyan/40 to-accent-blue/40 ring-1 ring-accent-cyan/40">
-                  <Shield size={32} className="text-accent-cyan" />
+            <GlassCard strong className="mt-5 overflow-hidden !p-0">
+              <div className="grid md:grid-cols-2">
+                <div className="relative h-56 md:h-auto overflow-hidden">
+                  <img
+                    src={ipShieldImg.url}
+                    alt="iLink IP shield"
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 md:bg-gradient-to-l" />
                 </div>
-                <div>
+                <div className="flex flex-col items-start gap-4 p-6 md:p-8">
+                  <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-cyan/40 to-accent-blue/40 ring-1 ring-accent-cyan/40">
+                    <Shield size={28} className="text-accent-cyan" />
+                  </div>
                   <h3 className="font-display text-xl font-semibold">
                     Sovereign custody of the iLink IP
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     Brand, methodologies, technology stack and operating
                     standards live at the apex — licensed downstream, never
                     exposed to operational risk. This shield is what makes the
