@@ -211,7 +211,7 @@ function FootprintPage() {
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                  
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-accent-cyan">
@@ -250,7 +250,7 @@ function FootprintPage() {
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/20" />
+                    <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
                     <div className="relative p-3">
                       <div className="text-sm font-semibold">{n.name}</div>
                       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
