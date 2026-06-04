@@ -121,7 +121,7 @@ function Index() {
               },
             ].map((c) => (
               <GlassCard key={c.title} className="reveal overflow-hidden !p-0">
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={c.img}
                     alt={c.title}
