@@ -87,7 +87,7 @@ function Index() {
       {/* THREE LAYERS */}
       <section className="relative px-4 py-12 md:py-20">
         <div className="mx-auto w-[min(1200px,94%)]">
-          <div className="reveal mb-10 overflow-hidden rounded-2xl ring-1 ring-accent-cyan/20 shadow-lg shadow-accent-blue/10">
+          <div className="reveal relative mb-10 overflow-hidden rounded-2xl ring-1 ring-accent-cyan/20 shadow-lg shadow-accent-blue/10">
             <video
               src={layersVideo.url}
               autoPlay
@@ -97,6 +97,14 @@ function Index() {
               preload="metadata"
               className="h-64 w-full object-cover sm:h-80 md:h-96"
             />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 p-6 text-center">
+              <h3 className="font-display text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+                iLink Global
+              </h3>
+              <p className="mt-2 max-w-lg text-sm text-white/90 sm:text-base">
+                Connecting Africa through knowledge, trade, infrastructure and capital — building a sovereign ecosystem across borders.
+              </p>
+            </div>
           </div>
 
           <div className="reveal max-w-2xl">
