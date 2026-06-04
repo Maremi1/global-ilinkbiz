@@ -87,6 +87,18 @@ function Index() {
       {/* THREE LAYERS */}
       <section className="relative px-4 py-12 md:py-20">
         <div className="mx-auto w-[min(1200px,94%)]">
+          <div className="reveal mb-10 overflow-hidden rounded-2xl ring-1 ring-accent-cyan/20 shadow-lg shadow-accent-blue/10">
+            <video
+              src={layersVideo.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="h-64 w-full object-cover sm:h-80 md:h-96"
+            />
+          </div>
+
           <div className="reveal max-w-2xl">
             <h2 className="font-display text-3xl font-bold sm:text-4xl">
               Three layers. <span className="text-accent-cyan">One ecosystem.</span>
