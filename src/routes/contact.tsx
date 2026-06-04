@@ -56,7 +56,7 @@ function ContactPage() {
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                  
                 </div>
                 <div className="flex items-start gap-3 p-6">
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent-cyan/15 text-accent-cyan ring-1 ring-accent-cyan/30">

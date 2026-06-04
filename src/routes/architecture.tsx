@@ -107,7 +107,7 @@ function ArchitecturePage() {
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
+                  
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div
