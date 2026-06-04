@@ -6,6 +6,7 @@ import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
 import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
+import layersVideo from "@/assets/hero-ambient-v3.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
