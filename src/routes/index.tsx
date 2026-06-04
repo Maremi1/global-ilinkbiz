@@ -6,7 +6,6 @@ import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
 import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
-import layersVideo from "@/assets/hero-ambient-v3.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,26 +86,6 @@ function Index() {
       {/* THREE LAYERS */}
       <section className="relative px-4 py-12 md:py-20">
         <div className="mx-auto w-[min(1200px,94%)]">
-          <div className="reveal relative mb-10 overflow-hidden rounded-2xl ring-1 ring-accent-cyan/20 shadow-lg shadow-accent-blue/10">
-            <video
-              src={layersVideo.url}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="h-64 w-full object-cover sm:h-80 md:h-96"
-            />
-            <div className="pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent p-6 pb-16 sm:p-8 sm:pb-20">
-              <h3 className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
-                iLink Global
-              </h3>
-              <p className="mt-2 max-w-xl text-sm text-white/85 sm:text-base">
-                Connecting Africa through knowledge, trade, infrastructure and capital — building a sovereign ecosystem across borders.
-              </p>
-            </div>
-          </div>
-
           <div className="reveal max-w-2xl">
             <h2 className="font-display text-3xl font-bold sm:text-4xl">
               Three layers. <span className="text-accent-cyan">One ecosystem.</span>
