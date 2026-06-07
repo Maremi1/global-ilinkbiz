@@ -50,11 +50,11 @@ export default function Navbar() {
               <li key={l.to}>
                 <Link
                   to={l.to}
-                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan"
                   activeOptions={{ exact: l.to === "/" }}
                   activeProps={{
                     className:
-                      "rounded-lg px-3 py-2 text-sm text-foreground bg-white/5 ring-1 ring-accent-cyan/40 shadow-[0_0_20px_-5px_var(--accent-cyan)]",
+                      "rounded-lg px-3 py-2 text-sm text-foreground bg-accent-cyan/10 ring-1 ring-accent-cyan/40 shadow-[0_0_20px_-5px_var(--accent-cyan)]",
                   }}
                 >
                   {l.label}
