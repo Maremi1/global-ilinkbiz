@@ -50,11 +50,11 @@ export default function Navbar() {
               <li key={l.to}>
                 <Link
                   to={l.to}
-                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan"
                   activeOptions={{ exact: l.to === "/" }}
                   activeProps={{
                     className:
-                      "rounded-lg px-3 py-2 text-sm text-foreground bg-white/5 ring-1 ring-accent-cyan/40 shadow-[0_0_20px_-5px_var(--accent-cyan)]",
+                      "rounded-lg px-3 py-2 text-sm text-foreground bg-accent-cyan/10 ring-1 ring-accent-cyan/40 shadow-[0_0_20px_-5px_var(--accent-cyan)]",
                   }}
                 >
                   {l.label}
@@ -65,7 +65,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="hidden rounded-xl bg-gradient-to-r from-accent-cyan to-accent-blue px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg shadow-accent-blue/30 transition-transform hover:scale-[1.03] md:inline-flex"
+            className="hidden rounded-xl bg-gradient-to-r from-accent-cyan to-accent-blue px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg shadow-accent-blue/30 transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background md:inline-flex"
           >
             Get in Touch
           </Link>
@@ -87,11 +87,11 @@ export default function Navbar() {
                   <Link
                     to={l.to}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                    className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-accent-cyan/10 hover:text-foreground"
                     activeOptions={{ exact: l.to === "/" }}
                     activeProps={{
                       className:
-                        "block rounded-lg px-3 py-2.5 text-sm text-foreground bg-white/5",
+                        "block rounded-lg px-3 py-2.5 text-sm text-foreground bg-accent-cyan/10 ring-1 ring-accent-cyan/40",
                     }}
                   >
                     {l.label}

@@ -195,7 +195,7 @@ function FootprintPage() {
                     </Marker>
                   ))}
                 </ComposableMap>
-                <div className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-background/40 px-2 py-1 text-[10px] uppercase tracking-wider text-muted-foreground backdrop-blur">
+                <div className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-background/85 px-2 py-1 text-[10px] uppercase tracking-wider text-foreground backdrop-blur">
                   ★ HQ — Kigali, Rwanda
                 </div>
               </div>
@@ -241,7 +241,7 @@ function FootprintPage() {
                     className={`group relative overflow-hidden rounded-xl border text-left transition ${
                       active === n.id
                         ? "border-accent-cyan/60 ring-1 ring-accent-cyan/40"
-                        : "border-white/10 hover:border-accent-cyan/40"
+                        : "border-border hover:border-accent-cyan/40"
                     }`}
                   >
                     <img

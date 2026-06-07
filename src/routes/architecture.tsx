@@ -367,7 +367,7 @@ function ArchitecturePage() {
 
             <GlassCard strong className="mt-6 overflow-x-auto p-0" hover={false}>
               <table className="w-full min-w-[640px] text-left text-sm">
-                <thead className="border-b border-white/10 text-xs uppercase tracking-wider text-accent-cyan">
+                <thead className="border-b border-border text-xs uppercase tracking-wider text-accent-cyan">
                   <tr>
                     <th className="px-5 py-4">Function</th>
                     <th className="px-5 py-4">Global IP</th>
@@ -375,7 +375,7 @@ function ArchitecturePage() {
                     <th className="px-5 py-4">National</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-border">
                   {[
                     ["Brand & IP", "Owns", "Licenses", "Operates under"],
                     ["Strategy", "Sets vision", "Executes", "Localizes"],
