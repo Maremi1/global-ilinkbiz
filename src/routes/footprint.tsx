@@ -195,7 +195,7 @@ function FootprintPage() {
                     </Marker>
                   ))}
                 </ComposableMap>
-                <div className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-background/40 px-2 py-1 text-[10px] uppercase tracking-wider text-muted-foreground backdrop-blur">
+                <div className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-background/85 px-2 py-1 text-[10px] uppercase tracking-wider text-foreground backdrop-blur">
                   ★ HQ — Kigali, Rwanda
                 </div>
               </div>
