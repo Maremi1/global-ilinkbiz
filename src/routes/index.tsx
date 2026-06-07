@@ -2,10 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import HeroAmbientVideo from "@/components/HeroAmbientVideo";
-import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, Globe2, Layers, Play, Shield, Sparkles } from "lucide-react";
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
 import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
+import heroVideo from "@/assets/hero-ambient-v3.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -141,6 +142,43 @@ function Index() {
               </GlassCard>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* VIDEO SHOWCASE */}
+      <section className="relative px-4 py-12 md:py-20">
+        <div className="mx-auto w-[min(1200px,94%)]">
+          <div className="reveal mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+            <div className="max-w-2xl">
+              <span className="text-xs uppercase tracking-[0.2em] text-accent-cyan">
+                In Motion
+              </span>
+              <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">
+                The ecosystem, <span className="text-gradient">in motion.</span>
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                A glimpse into how knowledge, trade, infrastructure and capital
+                flow across our African footprint.
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-accent-cyan">
+              <Play size={12} /> Ambient Reel
+            </div>
+          </div>
+
+          <GlassCard className="overflow-hidden !p-0">
+            <div className="relative aspect-video w-full overflow-hidden">
+              <video
+                src={heroVideo.url}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </GlassCard>
         </div>
       </section>
 
