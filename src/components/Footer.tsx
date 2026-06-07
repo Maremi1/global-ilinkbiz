@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-muted-foreground sm:flex-row">
+          <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
             <span>© {new Date().getFullYear()} iLink Global Holdings. All rights reserved.</span>
             <span>Headquartered in Kigali · Operating across Africa</span>
           </div>
