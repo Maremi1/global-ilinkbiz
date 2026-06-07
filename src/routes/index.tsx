@@ -2,10 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
 import HeroAmbientVideo from "@/components/HeroAmbientVideo";
-import { ArrowRight, Globe2, Layers, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, Globe2, Layers, Play, Shield, Sparkles } from "lucide-react";
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
 import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
+import heroVideo from "@/assets/hero-ambient-v3.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
