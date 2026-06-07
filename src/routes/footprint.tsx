@@ -241,7 +241,7 @@ function FootprintPage() {
                     className={`group relative overflow-hidden rounded-xl border text-left transition ${
                       active === n.id
                         ? "border-accent-cyan/60 ring-1 ring-accent-cyan/40"
-                        : "border-white/10 hover:border-accent-cyan/40"
+                        : "border-border hover:border-accent-cyan/40"
                     }`}
                   >
                     <img
