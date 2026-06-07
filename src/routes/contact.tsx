@@ -194,7 +194,7 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none ring-accent-cyan/40 transition focus:border-accent-cyan/50 focus:ring-2"
+        className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none ring-accent-cyan/40 transition focus-visible:border-accent-cyan focus-visible:ring-2"
       />
     </div>
   );
