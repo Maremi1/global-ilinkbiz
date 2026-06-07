@@ -87,11 +87,11 @@ export default function Navbar() {
                   <Link
                     to={l.to}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                    className="block rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-accent-cyan/10 hover:text-foreground"
                     activeOptions={{ exact: l.to === "/" }}
                     activeProps={{
                       className:
-                        "block rounded-lg px-3 py-2.5 text-sm text-foreground bg-white/5",
+                        "block rounded-lg px-3 py-2.5 text-sm text-foreground bg-accent-cyan/10 ring-1 ring-accent-cyan/40",
                     }}
                   >
                     {l.label}
