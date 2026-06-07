@@ -375,7 +375,7 @@ function ArchitecturePage() {
                     <th className="px-5 py-4">National</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-border">
                   {[
                     ["Brand & IP", "Owns", "Licenses", "Operates under"],
                     ["Strategy", "Sets vision", "Executes", "Localizes"],
