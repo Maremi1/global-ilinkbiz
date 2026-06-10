@@ -118,24 +118,33 @@ export default function HeroAmbientVideo() {
             playsInline
             preload="metadata"
             disablePictureInPicture
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover opacity-70 dark:opacity-55"
           />
         ) : (
           <img
             src={heroPoster}
             alt=""
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover opacity-70 dark:opacity-55"
           />
         )}
       </div>
-      {/* Cyan vignette + legibility wash */}
+      {/* Light-theme vignette + legibility wash */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 dark:hidden"
         style={{
           background:
             "radial-gradient(ellipse at 30% 40%, oklch(0.75 0.14 215 / 0.18), transparent 60%), linear-gradient(to bottom, oklch(0.985 0.008 230 / 0.55), oklch(0.985 0.008 230 / 0.30) 40%, oklch(0.985 0.008 230 / 0.85))",
         }}
       />
+      {/* Dark-theme vignette + legibility wash */}
+      <div
+        className="absolute inset-0 hidden dark:block"
+        style={{
+          background:
+            "radial-gradient(ellipse at 30% 40%, oklch(0.55 0.16 215 / 0.28), transparent 60%), linear-gradient(to bottom, oklch(0.16 0.03 252 / 0.65), oklch(0.16 0.03 252 / 0.40) 40%, oklch(0.16 0.03 252 / 0.90))",
+        }}
+      />
+
     </div>
   );
 }
