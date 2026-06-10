@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ilinkLogo from "@/assets/ilink-logo.png.asset.json";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { to: "/", label: "Home" },
@@ -63,20 +64,23 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <Link
-            to="/contact"
-            className="hidden rounded-xl bg-gradient-to-r from-accent-cyan to-accent-blue px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg shadow-accent-blue/30 transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background md:inline-flex"
-          >
-            Get in Touch
-          </Link>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Link
+              to="/contact"
+              className="hidden rounded-xl bg-gradient-to-r from-accent-cyan to-accent-blue px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg shadow-accent-blue/30 transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background md:inline-flex"
+            >
+              Get in Touch
+            </Link>
 
-          <button
-            aria-label="Toggle menu"
-            className="grid h-10 w-10 place-items-center rounded-lg text-foreground md:hidden"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            <button
+              aria-label="Toggle menu"
+              className="grid h-10 w-10 place-items-center rounded-lg text-foreground md:hidden"
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </nav>
 
         {open && (
