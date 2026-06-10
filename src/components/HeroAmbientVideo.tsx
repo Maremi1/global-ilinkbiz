@@ -100,7 +100,7 @@ export default function HeroAmbientVideo() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      className="pointer-events-none absolute -top-28 left-0 right-0 bottom-0 -z-10 overflow-hidden"
     >
       <div
         ref={mediaRef}
@@ -128,20 +128,20 @@ export default function HeroAmbientVideo() {
           />
         )}
       </div>
-      {/* Light-theme vignette + legibility wash */}
+      {/* Light-theme wash — fades INTO the page background top & bottom for seamless blending */}
       <div
         className="absolute inset-0 dark:hidden"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 40%, oklch(0.75 0.14 215 / 0.18), transparent 60%), linear-gradient(to bottom, oklch(0.985 0.008 230 / 0.55), oklch(0.985 0.008 230 / 0.30) 40%, oklch(0.985 0.008 230 / 0.85))",
+            "radial-gradient(ellipse at 30% 55%, oklch(0.75 0.14 215 / 0.16), transparent 60%), linear-gradient(to bottom, oklch(0.985 0.008 230) 0%, oklch(0.985 0.008 230 / 0.55) 14%, oklch(0.985 0.008 230 / 0.18) 40%, oklch(0.985 0.008 230 / 0.30) 70%, oklch(0.985 0.008 230 / 0.95) 100%)",
         }}
       />
-      {/* Dark-theme vignette + legibility wash */}
+      {/* Dark-theme wash — fades into dark page background top & bottom */}
       <div
         className="absolute inset-0 hidden dark:block"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 40%, oklch(0.55 0.16 215 / 0.28), transparent 60%), linear-gradient(to bottom, oklch(0.16 0.03 252 / 0.65), oklch(0.16 0.03 252 / 0.40) 40%, oklch(0.16 0.03 252 / 0.90))",
+            "radial-gradient(ellipse at 30% 55%, oklch(0.55 0.16 215 / 0.28), transparent 60%), linear-gradient(to bottom, oklch(0.18 0.03 252) 0%, oklch(0.18 0.03 252 / 0.65) 14%, oklch(0.18 0.03 252 / 0.28) 40%, oklch(0.18 0.03 252 / 0.40) 70%, oklch(0.18 0.03 252 / 0.96) 100%)",
         }}
       />
 
