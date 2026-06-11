@@ -14,6 +14,14 @@ export default async (env: any) => {
   if (config.plugins) {
     config.plugins = (config.plugins as any[]).flat().filter((p: any) => p && p.name !== "lovable-plugin");
   }
+
+  // Ensure assets and router base resolve correctly in production
+  // and emit sourcemaps to help map runtime errors back to source files.
+  config.base = config.base ?? '/';
+  config.build = {
+    ...(config.build || {}),
+    sourcemap: true,
+  };
   
   return config;
 };
