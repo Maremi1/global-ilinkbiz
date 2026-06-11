@@ -15,11 +15,20 @@ export const Route = createFileRoute("/architecture")({
         content:
           "The three-tier iLink Global holding architecture: Global IP custody, International Management and National Operating Companies.",
       },
+      { property: "og:url", content: "https://global.ilinkbiz.com/architecture" },
       { property: "og:title", content: "Holding Architecture — iLink Global" },
       {
         property: "og:description",
         content: "Global IP, International Management, National Operations — explained.",
       },
+      { name: "twitter:title", content: "Holding Architecture — iLink Global" },
+      {
+        name: "twitter:description",
+        content: "Global IP, International Management, National Operations — explained.",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://global.ilinkbiz.com/architecture" },
     ],
   }),
   component: ArchitecturePage,
@@ -99,32 +108,28 @@ function ArchitecturePage() {
           {/* TIER CARDS */}
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {tiers.map((t) => (
-              <GlassCard key={t.name} className="flex flex-col overflow-hidden !p-0">
-                <div className="relative h-44 overflow-hidden">
+              <GlassCard key={t.name} className="reveal flex flex-col overflow-hidden !p-0">
+                <div className="relative h-72 w-full overflow-hidden shrink-0">
                   <img
                     src={t.img}
                     alt={t.name}
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div
-                    className={`mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br ${t.color} text-accent-cyan ring-1 ring-accent-cyan/30`}
-                  >
-                    <t.icon size={22} />
+                <div className="flex flex-col flex-1 p-6">
+                  <div className={`mb-4 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${t.color} text-accent-cyan ring-1 ring-accent-cyan/30`}>
+                    <t.icon size={18} />
                   </div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-accent-cyan">
-                    {t.label}
-                  </div>
-                  <h3 className="mt-1 font-display text-xl font-semibold">{t.name}</h3>
-                  <div className="text-sm text-muted-foreground">{t.role}</div>
-                  <ul className="mt-4 space-y-2 text-sm">
-                    {t.points.map((p) => (
-                      <li key={p} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-cyan shadow-[0_0_8px_var(--accent-cyan)]" />
-                        <span className="text-muted-foreground">{p}</span>
+                  <div className="text-[10px] font-bold tracking-[0.2em] text-accent-cyan">{t.label}</div>
+                  <h3 className="mt-1 font-display text-lg font-semibold leading-tight">{t.name}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{t.role}</p>
+                  
+                  <ul className="mt-4 flex flex-col gap-2.5">
+                    {t.points.map((p, i) => (
+                      <li key={i} className="flex items-start gap-2 text-[13px] text-muted-foreground/90">
+                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent-cyan" />
+                        <span className="leading-snug">{p}</span>
                       </li>
                     ))}
                   </ul>

@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { Mail, Globe, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { Mail, Globe, MapPin, MessageCircle } from "lucide-react";
+import { useState, useRef, forwardRef } from "react";
 import hqImg from "@/assets/photos/contact-hq.jpg.asset.json";
+
+const WA_NUMBER = "255765658595";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -14,11 +16,20 @@ export const Route = createFileRoute("/contact")({
         content:
           "Get in touch with iLink Global Holdings. Email info@ilinkbiz.com or visit our headquarters at Vision Arcade Executive Suites, Kigali, Rwanda.",
       },
+      { property: "og:url", content: "https://global.ilinkbiz.com/contact" },
       { property: "og:title", content: "Contact — iLink Global" },
       {
         property: "og:description",
         content: "Reach iLink Global Holdings — info@ilinkbiz.com · Kigali, Rwanda.",
       },
+      { name: "twitter:title", content: "Contact — iLink Global" },
+      {
+        name: "twitter:description",
+        content: "Reach iLink Global Holdings — info@ilinkbiz.com · Kigali, Rwanda.",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://global.ilinkbiz.com/contact" },
     ],
   }),
   component: ContactPage,
@@ -26,6 +37,38 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const orgRef = useRef<HTMLInputElement>(null);
+  const subjectRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const name = nameRef.current?.value || "";
+    const email = emailRef.current?.value || "";
+    const org = orgRef.current?.value || "";
+    const subject = subjectRef.current?.value || "";
+    const message = messageRef.current?.value || "";
+
+    const text = [
+      `*New iLink Global Inquiry*`,
+      ``,
+      `*Name:* ${name}`,
+      `*Email:* ${email}`,
+      org ? `*Organization:* ${org}` : null,
+      `*Subject:* ${subject}`,
+      ``,
+      `*Message:*`,
+      message,
+    ]
+      .filter((l) => l !== null)
+      .join("\n");
+
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+    setSent(true);
+  }
 
   return (
     <PageShell>
@@ -118,11 +161,11 @@ function ContactPage() {
               {sent ? (
                 <div className="grid place-items-center py-16 text-center">
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-accent-cyan to-accent-blue text-primary-foreground shadow-[0_0_30px_var(--accent-cyan)]">
-                    <Send size={20} />
+                    <MessageCircle size={20} />
                   </div>
-                  <h3 className="mt-4 font-display text-xl font-semibold">Message sent</h3>
+                  <h3 className="mt-4 font-display text-xl font-semibold">WhatsApp opened!</h3>
                   <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                    Thank you — our team will be in touch shortly.
+                    Your prefilled message has been opened in WhatsApp. Just hit send!
                   </p>
                   <button
                     onClick={() => setSent(false)}
@@ -133,23 +176,22 @@ function ContactPage() {
                 </div>
               ) : (
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSent(true);
-                  }}
+                  onSubmit={handleSubmit}
                   className="space-y-4"
                 >
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <Field label="Full name" name="name" required />
-                    <Field label="Email" name="email" type="email" required />
+                    <Field label="Full name" name="name" ref={nameRef} required />
+                    <Field label="Email" name="email" type="email" ref={emailRef} required />
                   </div>
-                  <Field label="Organization" name="org" />
-                  <Field label="Subject" name="subject" required />
+                  <Field label="Organization" name="org" ref={orgRef} />
+                  <Field label="Subject" name="subject" ref={subjectRef} required />
                   <div>
                     <label className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">
                       Message
                     </label>
                     <textarea
+                      ref={messageRef}
+                      name="message"
                       required
                       rows={5}
                       className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none ring-accent-cyan/40 transition focus-visible:border-accent-cyan focus-visible:ring-2"
@@ -161,7 +203,7 @@ function ContactPage() {
                     type="submit"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-cyan to-accent-blue px-5 py-3 text-sm font-medium text-primary-foreground shadow-lg shadow-accent-blue/30 transition-transform hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
                   >
-                    Send message <Send size={16} />
+                    Send via WhatsApp <MessageCircle size={16} />
                   </button>
                 </form>
               )}
@@ -173,23 +215,17 @@ function ContactPage() {
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-}) {
+const Field = forwardRef<
+  HTMLInputElement,
+  { label: string; name: string; type?: string; required?: boolean }
+>(function Field({ label, name, type = "text", required }, ref) {
   return (
     <div>
       <label htmlFor={name} className="mb-1.5 block text-xs uppercase tracking-wider text-muted-foreground">
         {label}
       </label>
       <input
+        ref={ref}
         id={name}
         name={name}
         type={type}
@@ -198,4 +234,4 @@ function Field({
       />
     </div>
   );
-}
+});

@@ -6,7 +6,6 @@ import { ArrowRight, Globe2, Layers, Play, Shield, Sparkles } from "lucide-react
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
 import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
-import heroVideo from "@/assets/hero-ambient-v3.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,12 +16,22 @@ export const Route = createFileRoute("/")({
         content:
           "iLink Global Holdings architects a three-tier corporate ecosystem across Africa — knowledge, trade, infrastructure and capital, headquartered in Kigali, Rwanda.",
       },
+      { property: "og:url", content: "https://global.ilinkbiz.com/" },
       { property: "og:title", content: "iLink Global — Structuring a Global Ecosystem" },
       {
         property: "og:description",
         content:
           "A three-tier holding architecture across Rwanda, Ghana, Ethiopia and Tanzania.",
       },
+      { name: "twitter:title", content: "iLink Global — Structuring a Global Ecosystem" },
+      {
+        name: "twitter:description",
+        content:
+          "A three-tier holding architecture across Rwanda, Ghana, Ethiopia and Tanzania.",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://global.ilinkbiz.com/" },
     ],
   }),
   component: Index,
@@ -36,9 +45,7 @@ function Index() {
         <HeroAmbientVideo />
         <div className="mx-auto w-[min(1200px,94%)] py-16 md:py-24">
           <div className="reveal max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-accent-cyan">
-              <Sparkles size={12} /> Holding Architecture · Est. Rwanda
-            </span>
+
             <h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] text-gradient sm:text-5xl md:text-6xl lg:text-7xl">
               Structuring a Global Ecosystem
             </h1>
@@ -101,43 +108,69 @@ function Index() {
             {[
               {
                 icon: Shield,
-                tier: "Tier 1 · Global IP",
+                tier: "TIER 1",
                 title: "iLink Global Holdings",
-                desc: "Custodian of the intellectual property, brand, methodologies and global standards. The sovereign apex of the ecosystem.",
+                subtitle: "Custodian of Intellectual Property",
+                bullets: [
+                  "Owns the brand, methodologies and operating standards",
+                  "Sets global governance and ethical framework",
+                  "Licenses IP to international and national tiers",
+                  "Sovereign apex — non-operational",
+                ],
                 img: tier1Img.url,
               },
               {
                 icon: Layers,
-                tier: "Tier 2 · International",
+                tier: "TIER 2",
                 title: "International Management",
-                desc: "Strategic oversight, capital orchestration and cross-border governance — the bridge between vision and execution.",
+                subtitle: "Strategic Oversight & Capital",
+                bullets: [
+                  "Investment holding for the national entities",
+                  "Cross-border governance and risk control",
+                  "Expansion engine — new market deployment",
+                  "Capital funnel between investors and operators",
+                ],
                 img: tier2Img.url,
               },
               {
                 icon: Globe2,
-                tier: "Tier 3 · National",
-                title: "Operating Companies",
-                desc: "Locally incorporated entities in Rwanda, Ghana, Ethiopia and Tanzania delivering the ecosystem on the ground.",
+                tier: "TIER 3",
+                title: "National Operating Companies",
+                subtitle: "Local Execution",
+                bullets: [
+                  "Locally incorporated, locally compliant entities",
+                  "Deliver products and services on the ground",
+                  "Generate revenue feeding the value loop",
+                  "Rwanda · Ghana · Ethiopia · Tanzania",
+                ],
                 img: tier3Img.url,
               },
             ].map((c) => (
-              <GlassCard key={c.title} className="reveal overflow-hidden !p-0">
-                <div className="relative h-56 overflow-hidden">
+              <GlassCard key={c.title} className="reveal flex flex-col overflow-hidden !p-0">
+                <div className="relative h-72 w-full overflow-hidden shrink-0">
                   <img
                     src={c.img}
                     alt={c.title}
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  
                 </div>
-                <div className="p-6">
-                  <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
-                    <c.icon size={20} />
+                <div className="flex flex-col flex-1 p-6">
+                  <div className="mb-4 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-cyan/30 to-accent-blue/30 text-accent-cyan ring-1 ring-accent-cyan/30">
+                    <c.icon size={18} />
                   </div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-accent-cyan">{c.tier}</div>
-                  <h3 className="mt-1 font-display text-xl font-semibold">{c.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                  <div className="text-[10px] font-bold tracking-[0.2em] text-accent-cyan">{c.tier}</div>
+                  <h3 className="mt-1 font-display text-lg font-semibold leading-tight">{c.title}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{c.subtitle}</p>
+                  
+                  <ul className="mt-4 flex flex-col gap-2.5">
+                    {c.bullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-2 text-[13px] text-muted-foreground/90">
+                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent-cyan" />
+                        <span className="leading-snug">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </GlassCard>
             ))}
@@ -168,14 +201,12 @@ function Index() {
 
           <GlassCard className="overflow-hidden !p-0">
             <div className="relative aspect-video w-full overflow-hidden">
-              <video
-                src={heroVideo.url}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="h-full w-full object-cover"
+              <iframe
+                src="https://www.youtube.com/embed/41wXVemBxIY?autoplay=1&mute=1&loop=1&playlist=41wXVemBxIY&controls=0&modestbranding=1&rel=0"
+                title="Ambient Reel"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full border-0 object-cover"
               />
             </div>
           </GlassCard>

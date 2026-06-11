@@ -30,11 +30,20 @@ export const Route = createFileRoute("/operations")({
         content:
           "Four operating sectors, an IP shield and a value creation loop that turns capital into compounding ecosystem returns.",
       },
+      { property: "og:url", content: "https://global.ilinkbiz.com/operations" },
       { property: "og:title", content: "Operational Ecosystem — iLink Global" },
       {
         property: "og:description",
         content: "Knowledge & Tech, Trade, Infrastructure and Core Support sectors.",
       },
+      { name: "twitter:title", content: "Operational Ecosystem — iLink Global" },
+      {
+        name: "twitter:description",
+        content: "Knowledge & Tech, Trade, Infrastructure and Core Support sectors.",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://global.ilinkbiz.com/operations" },
     ],
   }),
   component: OperationsPage,

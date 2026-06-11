@@ -26,11 +26,20 @@ export const Route = createFileRoute("/footprint")({
         content:
           "iLink Global operates across Rwanda (HQ), Ghana, Ethiopia and Tanzania, coordinated from Vision Arcade Executive Suites in Kigali.",
       },
+      { property: "og:url", content: "https://global.ilinkbiz.com/footprint" },
       { property: "og:title", content: "Global Footprint — iLink Global" },
       {
         property: "og:description",
         content: "Operating across Rwanda, Ghana, Ethiopia and Tanzania.",
       },
+      { name: "twitter:title", content: "Global Footprint — iLink Global" },
+      {
+        name: "twitter:description",
+        content: "Operating across Rwanda, Ghana, Ethiopia and Tanzania.",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://global.ilinkbiz.com/footprint" },
     ],
   }),
   component: FootprintPage,
