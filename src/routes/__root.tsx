@@ -68,6 +68,8 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
+    { rel: "icon", href: "/__l5e/assets-v1/afa6b058-27c2-4fc2-9b8f-c62c589a547b/ilink-logo.png", sizes: "32x32" },
+    { rel: "apple-touch-icon", href: "/__l5e/assets-v1/afa6b058-27c2-4fc2-9b8f-c62c589a547b/ilink-logo.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "canonical", href: SITE_URL },
       {
