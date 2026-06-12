@@ -50,6 +50,13 @@ async function run() {
     }
   }
 
+  const shellHtml = path.join(root, '_shell.html');
+  const indexHtml = path.join(root, 'index.html');
+  if (fs.existsSync(shellHtml) && !fs.existsSync(indexHtml)) {
+    console.log('Copying _shell.html to index.html for SPA mode...');
+    await copyFile(shellHtml, indexHtml);
+  }
+
   console.log('Flatten complete. Document root is `dist/`.');
 }
 

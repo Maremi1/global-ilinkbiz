@@ -19,12 +19,11 @@ export default function HeroAmbientVideo() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isSmall = window.matchMedia("(max-width: 768px)").matches;
     // @ts-expect-error non-standard
     const conn = navigator.connection;
     const saveData = conn?.saveData === true;
     const slowNet = typeof conn?.effectiveType === "string" && /(^| )(2g|slow-2g)/.test(conn.effectiveType);
-    if (prefersReducedMotion || isSmall || saveData || slowNet) return;
+    if (prefersReducedMotion || saveData || slowNet) return;
     setEnableVideo(true);
   }, []);
 

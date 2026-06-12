@@ -7,7 +7,13 @@
 import { defineConfig as lovableConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default async (env: any) => {
-  const configFn = lovableConfig();
+  const configFn = lovableConfig({
+    tanstackStart: {
+      spa: {
+        enabled: true
+      }
+    }
+  });
   const config = await configFn(env);
   
   // Remove the lovable-tagger plugin to hide the "Edit with Lovable" badge
