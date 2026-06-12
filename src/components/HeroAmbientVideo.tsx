@@ -17,13 +17,6 @@ export default function HeroAmbientVideo() {
 
   // Capability check
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // @ts-expect-error non-standard
-    const conn = navigator.connection;
-    const saveData = conn?.saveData === true;
-    const slowNet = typeof conn?.effectiveType === "string" && /(^| )(2g|slow-2g)/.test(conn.effectiveType);
-    if (prefersReducedMotion || saveData || slowNet) return;
     setEnableVideo(true);
   }, []);
 

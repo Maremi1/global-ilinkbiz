@@ -202,7 +202,7 @@ function Index() {
           <GlassCard className="overflow-hidden !p-0">
             <div className="relative aspect-video w-full overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/41wXVemBxIY?autoplay=1&mute=1&loop=1&playlist=41wXVemBxIY&controls=0&modestbranding=1&rel=0"
+                src="https://www.youtube.com/embed/41wXVemBxIY?autoplay=1&mute=1&loop=1&playlist=41wXVemBxIY&controls=0&modestbranding=1&rel=0&playsinline=1"
                 title="Ambient Reel"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
