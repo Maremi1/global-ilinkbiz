@@ -41,7 +41,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2">
             <img
               src={ilinkLogo.url}
-              alt="iLink Global"
+              alt="i Link Global"
               className="h-10 w-auto"
             />
           </Link>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import { Building2, Globe, Network, Shield, Copyright, Cpu, BookOpen, BadgeCheck } from "lucide-react";
+import { Building2, Globe, Network, Shield, Copyright, Cpu, BookOpen, BadgeCheck, FileText, Download } from "lucide-react";
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
 import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
@@ -9,19 +9,19 @@ import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
 export const Route = createFileRoute("/architecture")({
   head: () => ({
     meta: [
-      { title: "Holding Architecture — iLink Global" },
+      { title: "Holding Architecture — i Link Global" },
       {
         name: "description",
         content:
-          "The three-tier iLink Global holding architecture: Global IP custody, International Management and National Operating Companies.",
+          "The three-tier i Link Global holding architecture: Global IP custody, International Management and National Operating Companies.",
       },
       { property: "og:url", content: "https://global.ilinkbiz.com/architecture" },
-      { property: "og:title", content: "Holding Architecture — iLink Global" },
+      { property: "og:title", content: "Holding Architecture — i Link Global" },
       {
         property: "og:description",
         content: "Global IP, International Management, National Operations — explained.",
       },
-      { name: "twitter:title", content: "Holding Architecture — iLink Global" },
+      { name: "twitter:title", content: "Holding Architecture — i Link Global" },
       {
         name: "twitter:description",
         content: "Global IP, International Management, National Operations — explained.",
@@ -38,7 +38,7 @@ const tiers = [
   {
     icon: Globe,
     label: "Tier 1",
-    name: "iLink Global Holdings",
+    name: "i Link Global Holdings",
     role: "Custodian of Intellectual Property",
     points: [
       "Owns the brand, methodologies and operating standards",
@@ -80,10 +80,10 @@ const tiers = [
 ];
 
 const nationals = [
-  { c: "iLink Rwanda Limited", role: "HQ & Operating Co." },
-  { c: "iLink Ghana", role: "Operating Co." },
-  { c: "iLink Ethiopia", role: "Operating Co." },
-  { c: "iLink Tanzania", role: "Operating Co." },
+  { c: "i Link Rwanda Limited", role: "HQ & Operating Co." },
+  { c: "i Link Ghana", role: "Operating Co." },
+  { c: "i Link Ethiopia", role: "Operating Co." },
+  { c: "i Link Tanzania", role: "Operating Co." },
 ];
 
 function ArchitecturePage() {
@@ -212,7 +212,7 @@ function ArchitecturePage() {
                         strokeWidth={1.4}
                       />
                       <div className="absolute bottom-3 font-display text-sm font-bold tracking-tight">
-                        iLink <span className="text-accent-cyan">Global</span>
+                        i Link <span className="text-accent-cyan">Global</span>
                       </div>
                     </div>
                   </div>
@@ -244,7 +244,7 @@ function ArchitecturePage() {
               {/* Royalty banner */}
               <div className="-mx-6 -mb-6 mt-2 border-t-2 border-accent-cyan/50 bg-gradient-to-r from-accent-blue/40 via-accent-blue/30 to-accent-blue/40 px-6 py-5 text-center">
                 <p className="text-sm sm:text-base">
-                  iLink Global generates revenue exclusively by{" "}
+                  i Link Global generates revenue exclusively by{" "}
                   <span className="font-semibold text-accent-cyan">licensing this protected IP</span>{" "}
                   to national entities in exchange for{" "}
                   <span className="font-semibold text-accent-cyan">royalties</span>.
@@ -283,7 +283,7 @@ function ArchitecturePage() {
                 <div className="w-full max-w-sm">
                   <div className="rounded-xl border-2 border-accent-cyan/60 bg-gradient-to-br from-accent-blue/40 to-accent-cyan/20 p-5 text-center shadow-[0_0_30px_oklch(0.65_0.18_230/0.35)]">
                     <div className="font-display text-xl font-bold tracking-tight">
-                      iLink <span className="text-accent-cyan">Global</span>
+                      i Link <span className="text-accent-cyan">Global</span>
                     </div>
                     <div className="mt-2 border-t border-accent-cyan/30 pt-2 text-xs uppercase tracking-wider">
                       Ultimate IP & Holding Authority
@@ -303,7 +303,7 @@ function ArchitecturePage() {
                 <div className="w-full max-w-sm">
                   <div className="rounded-xl border-2 border-accent-cyan/40 bg-gradient-to-br from-accent-blue/30 to-accent-cyan/10 p-5 text-center shadow-[0_0_24px_oklch(0.65_0.18_230/0.25)]">
                     <div className="font-display text-xl font-bold tracking-tight">
-                      iLink <span className="text-accent-cyan">International</span>
+                      i Link <span className="text-accent-cyan">International</span>
                     </div>
                     <div className="mt-2 border-t border-accent-cyan/30 pt-2 text-xs uppercase tracking-wider">
                       Investment & Management Arm
@@ -343,12 +343,12 @@ function ArchitecturePage() {
                 <div className="mt-10 w-full max-w-xl px-4">
                   <div className="rounded-xl border border-accent-cyan/40 bg-accent-cyan/5 p-4 text-sm">
                     <div className="font-semibold text-foreground">
-                      Example Structure: iLink Rwanda (10,000 Total Shares)
+                      Example Structure: i Link Rwanda (10,000 Total Shares)
                     </div>
                     <ul className="mt-2 space-y-1 text-muted-foreground">
                       <li className="flex gap-2">
                         <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-cyan" />
-                        5,000 shares held directly by iLink International
+                        5,000 shares held directly by i Link International
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-cyan" />
@@ -398,6 +398,32 @@ function ArchitecturePage() {
                   ))}
                 </tbody>
               </table>
+            </GlassCard>
+          </div>
+
+          {/* CORPORATE PROFILE DOWNLOAD */}
+          <div className="mt-20 mb-10 flex flex-col items-center text-center">
+            <GlassCard className="w-full max-w-2xl bg-gradient-to-br from-accent-blue/10 to-accent-cyan/5 border-accent-cyan/20 p-8 sm:p-10">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-cyan/20 text-accent-cyan mb-6 shadow-inner">
+                <FileText size={32} />
+              </div>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                Company Profile
+              </h2>
+              <p className="mt-4 text-muted-foreground text-sm sm:text-base max-w-lg mx-auto">
+                Download the official i Link Global corporate profile for a comprehensive overview of our three-tier holding architecture, operational ecosystem, and global footprint.
+              </p>
+              <div className="mt-8 flex justify-center">
+                <a
+                  href="/i_Link_Global_Corporate_Profile.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 rounded-full bg-accent-cyan px-8 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-cyan/90 hover:scale-105 active:scale-95 shadow-lg shadow-accent-cyan/20"
+                >
+                  <Download size={18} strokeWidth={2.5} className="transition-transform group-hover:-translate-y-1 group-hover:scale-110" />
+                  Download Profile
+                </a>
+              </div>
             </GlassCard>
           </div>
         </div>

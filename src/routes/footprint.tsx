@@ -20,19 +20,19 @@ const AFRICAN_ISO_IDS = new Set([
 export const Route = createFileRoute("/footprint")({
   head: () => ({
     meta: [
-      { title: "Global Footprint — iLink Global" },
+      { title: "Global Footprint — i Link Global" },
       {
         name: "description",
         content:
-          "iLink Global operates across Rwanda (HQ), Ghana, Ethiopia and Tanzania, coordinated from Vision Arcade Executive Suites in Kigali.",
+          "i Link Global operates across Rwanda (HQ), Ghana, Ethiopia and Tanzania, coordinated from Vision Arcade Executive Suites in Kigali.",
       },
       { property: "og:url", content: "https://global.ilinkbiz.com/footprint" },
-      { property: "og:title", content: "Global Footprint — iLink Global" },
+      { property: "og:title", content: "Global Footprint — i Link Global" },
       {
         property: "og:description",
         content: "Operating across Rwanda, Ghana, Ethiopia and Tanzania.",
       },
-      { name: "twitter:title", content: "Global Footprint — iLink Global" },
+      { name: "twitter:title", content: "Global Footprint — i Link Global" },
       {
         name: "twitter:description",
         content: "Operating across Rwanda, Ghana, Ethiopia and Tanzania.",
@@ -88,7 +88,7 @@ function FootprintPage() {
             </h1>
             <p className="mt-5 text-muted-foreground">
               Four national operating companies, one coordinated ecosystem.
-              Tap a node to explore the role each country plays in the iLink
+              Tap a node to explore the role each country plays in the i Link
               Global network.
             </p>
           </div>

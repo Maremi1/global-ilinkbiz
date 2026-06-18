@@ -33,20 +33,20 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "iLink Global — Structuring a Global Ecosystem" },
+      { title: "i Link Global — Structuring a Global Ecosystem" },
       {
         name: "description",
         content:
-          "iLink Global Holdings architects a three-tier corporate ecosystem across Africa — knowledge, trade, infrastructure and capital, headquartered in Kigali, Rwanda.",
+          "i Link Global Holdings architects a three-tier corporate ecosystem across Africa — knowledge, trade, infrastructure and capital, headquartered in Kigali, Rwanda.",
       },
-      { name: "author", content: "iLink Global Holdings" },
+      { name: "author", content: "i Link Global Holdings" },
       { name: "robots", content: "index, follow" },
 
       /* Open Graph */
-      { property: "og:site_name", content: "iLink Global" },
+      { property: "og:site_name", content: "i Link Global" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
-      { property: "og:title", content: "iLink Global — Structuring a Global Ecosystem" },
+      { property: "og:title", content: "i Link Global — Structuring a Global Ecosystem" },
       {
         property: "og:description",
         content:
@@ -59,7 +59,7 @@ export const Route = createRootRoute({
 
       /* Twitter / X */
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "iLink Global — Structuring a Global Ecosystem" },
+      { name: "twitter:title", content: "i Link Global — Structuring a Global Ecosystem" },
       {
         name: "twitter:description",
         content:

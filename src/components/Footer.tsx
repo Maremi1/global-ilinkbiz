@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="grid gap-8 md:grid-cols-4">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2">
-                <img src={ilinkLogo.url} alt="iLink Global" className="h-10 w-auto" />
+                <img src={ilinkLogo.url} alt="i Link Global" className="h-10 w-auto" />
               </div>
               <p className="mt-3 max-w-md text-sm text-muted-foreground">
                 Structuring a global ecosystem across knowledge, trade,
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-            <span>© {new Date().getFullYear()} iLink Global Holdings. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} i Link Global Holdings. All rights reserved.</span>
             <span>Headquartered in Kigali · Operating across Africa</span>
           </div>
         </div>

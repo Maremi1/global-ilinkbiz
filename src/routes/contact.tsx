@@ -10,22 +10,22 @@ const WA_NUMBER = "255765658595";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — iLink Global" },
+      { title: "Contact — i Link Global" },
       {
         name: "description",
         content:
-          "Get in touch with iLink Global Holdings. Email info@ilinkbiz.com or visit our headquarters at Vision Arcade Executive Suites, Kigali, Rwanda.",
+          "Get in touch with i Link Global Holdings. Email info@ilinkbiz.com or visit our headquarters at Vision Arcade Executive Suites, Kigali, Rwanda.",
       },
       { property: "og:url", content: "https://global.ilinkbiz.com/contact" },
-      { property: "og:title", content: "Contact — iLink Global" },
+      { property: "og:title", content: "Contact — i Link Global" },
       {
         property: "og:description",
-        content: "Reach iLink Global Holdings — info@ilinkbiz.com · Kigali, Rwanda.",
+        content: "Reach i Link Global Holdings — info@ilinkbiz.com · Kigali, Rwanda.",
       },
-      { name: "twitter:title", content: "Contact — iLink Global" },
+      { name: "twitter:title", content: "Contact — i Link Global" },
       {
         name: "twitter:description",
-        content: "Reach iLink Global Holdings — info@ilinkbiz.com · Kigali, Rwanda.",
+        content: "Reach i Link Global Holdings — info@ilinkbiz.com · Kigali, Rwanda.",
       },
     ],
     links: [
@@ -52,7 +52,7 @@ function ContactPage() {
     const message = messageRef.current?.value || "";
 
     const text = [
-      `*New iLink Global Inquiry*`,
+      `*New i Link Global Inquiry*`,
       ``,
       `*Name:* ${name}`,
       `*Email:* ${email}`,
@@ -95,7 +95,7 @@ function ContactPage() {
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={hqImg.url}
-                    alt="iLink Global headquarters in Kigali"
+                    alt="i Link Global headquarters in Kigali"
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
@@ -195,7 +195,7 @@ function ContactPage() {
                       required
                       rows={5}
                       className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground outline-none ring-accent-cyan/40 transition focus-visible:border-accent-cyan focus-visible:ring-2"
-                      placeholder="Tell us about your interest in the iLink Global ecosystem…"
+                      placeholder="Tell us about your interest in the i Link Global ecosystem…"
                     />
                   </div>
 

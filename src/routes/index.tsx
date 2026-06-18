@@ -10,20 +10,20 @@ import tier3Img from "@/assets/photos/tier3.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "iLink Global — Structuring a Global Ecosystem" },
+      { title: "i Link Global — Structuring a Global Ecosystem" },
       {
         name: "description",
         content:
-          "iLink Global Holdings architects a three-tier corporate ecosystem across Africa — knowledge, trade, infrastructure and capital, headquartered in Kigali, Rwanda.",
+          "i Link Global Holdings architects a three-tier corporate ecosystem across Africa — knowledge, trade, infrastructure and capital, headquartered in Kigali, Rwanda.",
       },
       { property: "og:url", content: "https://global.ilinkbiz.com/" },
-      { property: "og:title", content: "iLink Global — Structuring a Global Ecosystem" },
+      { property: "og:title", content: "i Link Global — Structuring a Global Ecosystem" },
       {
         property: "og:description",
         content:
           "A three-tier holding architecture across Rwanda, Ghana, Ethiopia and Tanzania.",
       },
-      { name: "twitter:title", content: "iLink Global — Structuring a Global Ecosystem" },
+      { name: "twitter:title", content: "i Link Global — Structuring a Global Ecosystem" },
       {
         name: "twitter:description",
         content:
@@ -50,7 +50,7 @@ function Index() {
               Structuring a Global Ecosystem
             </h1>
             <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-              iLink Global Holdings unites knowledge, trade, infrastructure and
+              i Link Global Holdings unites knowledge, trade, infrastructure and
               capital under a single, transparent three-tier architecture —
               built for scale, sovereignty and chain-of-custody across borders.
             </p>
@@ -109,7 +109,7 @@ function Index() {
               {
                 icon: Shield,
                 tier: "TIER 1",
-                title: "iLink Global Holdings",
+                title: "i Link Global Holdings",
                 subtitle: "Custodian of Intellectual Property",
                 bullets: [
                   "Owns the brand, methodologies and operating standards",

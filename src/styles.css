@@ -58,7 +58,7 @@
 :root {
   --radius: 0.875rem;
 
-  /* iLink Global — Light sky palette */
+  /* i Link Global — Light sky palette */
   --background: oklch(0.985 0.008 230);
   --foreground: oklch(0.22 0.04 252);
 

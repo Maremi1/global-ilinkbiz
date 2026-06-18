@@ -24,19 +24,19 @@ import teamImg from "@/assets/photos/ops-team.jpg.asset.json";
 export const Route = createFileRoute("/operations")({
   head: () => ({
     meta: [
-      { title: "Operational Ecosystem — iLink Global" },
+      { title: "Operational Ecosystem — i Link Global" },
       {
         name: "description",
         content:
           "Four operating sectors, an IP shield and a value creation loop that turns capital into compounding ecosystem returns.",
       },
       { property: "og:url", content: "https://global.ilinkbiz.com/operations" },
-      { property: "og:title", content: "Operational Ecosystem — iLink Global" },
+      { property: "og:title", content: "Operational Ecosystem — i Link Global" },
       {
         property: "og:description",
         content: "Knowledge & Tech, Trade, Infrastructure and Core Support sectors.",
       },
-      { name: "twitter:title", content: "Operational Ecosystem — iLink Global" },
+      { name: "twitter:title", content: "Operational Ecosystem — i Link Global" },
       {
         name: "twitter:description",
         content: "Knowledge & Tech, Trade, Infrastructure and Core Support sectors.",
@@ -96,7 +96,7 @@ function OperationsPage() {
               Capital in. <span className="text-gradient">Value compounded.</span>
             </h1>
             <p className="mt-5 text-muted-foreground">
-              The iLink Global operating model spans four sectors, protected by an IP shield and
+              The i Link Global operating model spans four sectors, protected by an IP shield and
               orchestrated by an international management layer that closes the value loop.
             </p>
           </div>
@@ -113,7 +113,7 @@ function OperationsPage() {
                 <div className="relative h-56 md:h-auto overflow-hidden">
                   <img
                     src={ipShieldImg.url}
-                    alt="iLink IP shield"
+                    alt="i Link IP shield"
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
@@ -123,7 +123,7 @@ function OperationsPage() {
                     <Shield size={28} className="text-accent-cyan" />
                   </div>
                   <h3 className="font-display text-xl font-semibold">
-                    Sovereign custody of the iLink IP
+                    Sovereign custody of the i Link IP
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     Brand, methodologies, technology stack and operating standards live at the apex
