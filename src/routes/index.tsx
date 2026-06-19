@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import PageShell from "@/components/PageShell";
 import { GlassCard } from "@/components/GlassCard";
-import HeroAmbientVideo from "@/components/HeroAmbientVideo";
+import HeroInteractiveBackground from "@/components/HeroInteractiveBackground";
 import { ArrowRight, Globe2, Layers, Play, Shield, Sparkles } from "lucide-react";
 import tier1Img from "@/assets/photos/tier1.jpg.asset.json";
 import tier2Img from "@/assets/photos/tier2.jpg.asset.json";
@@ -42,7 +42,7 @@ function Index() {
     <PageShell>
       {/* HERO */}
       <section className="relative px-4">
-        <HeroAmbientVideo />
+        <HeroInteractiveBackground />
         <div className="mx-auto w-[min(1200px,94%)] py-16 md:py-24">
           <div className="reveal max-w-3xl">
 
